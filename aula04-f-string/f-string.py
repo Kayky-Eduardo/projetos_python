@@ -1,13 +1,17 @@
+#imports
+#bibloteca para interagir com o os
 import os
-
+#biblioteca para pegar data e hora do sistema
 import datetime
 
+#limpar o sistema
 os.system('cls')
 
 print('-'*70)
 print('ENTRADA DE DADOS EM PYTHON')
 print('='*70)
 
+#entrada
 nome = input('Entre com um nome: ')
 peso = input('Entre com o peso: ')
 altura = input('Entre com a altura: ')
