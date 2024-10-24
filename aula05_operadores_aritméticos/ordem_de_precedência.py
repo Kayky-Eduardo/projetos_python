@@ -15,7 +15,7 @@ nota4 = float(input('4ª nota: '))
 #processamento
 soma = nota1 + nota2 + nota3 + nota4
 media = nota1 + nota2 + nota3 + nota4 / 4
-media_correta = (nota1 + nota2 + nota3 + nota4) / 4
+media_correta = soma / 4
 
 #saida
 print('---- Notas --------')
