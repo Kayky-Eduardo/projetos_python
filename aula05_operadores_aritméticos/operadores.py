@@ -29,11 +29,23 @@ print('-'*70)
 dividendo = float(input('Entre com o dividendo: '))
 divisor = float(input('Entre com o divisor: '))
 
+print()
+print('---RAIZ QUADRADA')
+print('-'*70)
+radicando_quadrado = float(input('Entre com o valor da raiz quadrada: '))
+
+print()
+print('--- RAIZ CÚBICA')
+print('-'*70)
+radicando_cúbico = float(input('Entre com o valor da raiz cúbica: '))
+
 #processamento
 soma = parcela_1 + parcela_2
 diferenca = minuendo - subtraendo
 produto = multiplicando * multiplicador
 quociente = dividendo / divisor
+raiz_quadrada = radicando_quadrado **(1/2)
+raiz_cúbica = radicando_cúbico **(1/3)
 
 #saida
 print('='*70)
@@ -43,3 +55,5 @@ print(f'A soma de {parcela_1} + {parcela_2} é: {soma}')
 print(f'A subtração de {minuendo} = {subtraendo} é: {diferenca}')
 print(f'A multiplicação de {multiplicando} x {multiplicador} é: {produto}')
 print(f'A divisão de {dividendo} ÷ {divisor} é: {quociente}')
+print(f'A raiz quadrada de {radicando_quadrado} é: {raiz_quadrada}')
+print(f'A raiz cúbica de {radicando_cúbico} é: {raiz_cúbica}')
