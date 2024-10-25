@@ -24,3 +24,4 @@ print('Peso...........: ', peso)
 print('Altura.........: ', altura)
 print('='*70)
 print('')
+#completo
