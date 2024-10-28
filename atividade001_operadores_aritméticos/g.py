@@ -13,5 +13,5 @@ valor_mm = valor * 10
 
 #saida
 print()
-print(f' {valor}m em centímetros é: {valor_cm}')
-print(f' {valor}m em milímetros é: {valor_mm}')
+print(f' {valor}m em centímetros é: {valor_cm}cm')
+print(f' {valor}m em milímetros é: {valor_mm}mm')
