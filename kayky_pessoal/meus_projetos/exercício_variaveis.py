@@ -11,19 +11,19 @@ altura = float(input('Entre com a altura: '))
 #saida
 print()
 print('='*70)
-if idade <=18:
-    print(f'{idade}, precisa amadurecer!')
+if idade < 18:
+    print(f'{idade}, Idade insuficiente!')
 else:
-    print(f'{idade}, tá velho demais')
+    print(f'{idade}, Idade aprovada!')
 
-print(f'{nome}, você é homosexual!')
+print(f'{nome}, Aprovado!')
 
 if peso >=75:
-    print(f'{peso}, tá gordo!')
+    print(f'{peso}, É necessário uma dieta, para o emagrecimento!')
 else:
-    print(f'{peso}, esquelético!')
+    print(f'{peso}, É necessário o aumento de peso!')
 if altura <=1.80:
-    print(f'{altura}, cresça e apareça!')
+    print(f'{altura}m, Altura insuficiente!')
 else:
-    print(f'{altura}m, tamanho desnecessário!')
+    print(f'{altura}m, Altura suficiente!')
 print('='*70)

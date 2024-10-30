@@ -9,3 +9,5 @@ velocidade = float(input('Insira a velocidade: '))
 #condicionais
 if velocidade > 60:
     print('Você ultrapassou o limite de velocidade!')
+else:
+    print('Dentro do limite estabelecido, continue assim!')
