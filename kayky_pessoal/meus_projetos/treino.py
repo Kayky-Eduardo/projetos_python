@@ -22,4 +22,3 @@ if b > c:
     b = c
     c = auxiliar
 print(f'{a}, {b} e {c}')
-    
