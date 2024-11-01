@@ -14,13 +14,16 @@ media = total / 5
 
 if dia1 > dia2 and dia1 > dia3 and dia1 > dia4 and dia1 > dia5:
     print(f'O dia com o mais empréstimos é segunda: {dia1} ')
-elif dia2 > dia1 and dia2 > dia3 and dia2 > dia4 and dia2 > dia5:
+elif dia2 > dia3 and dia2 > dia4 and dia2 > dia5:
     print(f'O dia com mais empréstimos é terça: {dia2}')
-elif dia3 > dia1 and dia3 > dia2 and dia3 > dia4 and dia3 > dia5:
+elif dia3 > dia4 and dia3 > dia5:
     print(f'O dia com mais empréstimos é quarta: {dia3}')
-elif dia4 > dia2 and dia4 > dia3 and dia4 > dia1 and dia4 > dia5:
+elif dia4 > dia5:
     print(f'O dia com mais empréstimos é quinta: {dia4}')
-elif dia5 > dia1 and dia5 > dia2 and dia5 > dia4 and dia5 > dia3:
+elif dia1 == dia2 == dia3 == dia4 == dia5:
+    print(f'Todos os dias são iguais')
+else:
     print(f'O dia com mais empréstimos é sexta: {dia5}')
+
 print(f'O total de livros emprestados é {total}')
 print(f'A média é: {media}')
