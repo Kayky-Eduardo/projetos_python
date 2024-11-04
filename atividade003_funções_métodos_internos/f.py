@@ -13,4 +13,4 @@ if resposta < 1 or resposta > 10:
 elif resposta != numero:
     print('Boa tentativa, tente denovo!')
 else:
-    print(f'parabéns você conseguiu acertar o número')
+    print(f'parabéns, você conseguiu acertar o número')
