@@ -10,7 +10,7 @@ c = float(input('Digite o valor c: '))
 
 delta = (b * b) - ( 4 * a * c)
 
-if delta == 0 or delta < 0:
+if delta <= 0:
     print('valores inválidos!')
 else:
     raiz_delta = math.sqrt(delta)
