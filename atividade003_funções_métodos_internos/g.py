@@ -12,7 +12,7 @@ delta = (b * b) - ( 4 * a * c)
 
 raiz_delta = math.sqrt(delta)
 
-x1 = (- b + raiz_delta) / (2 * a)
-x2 = (- b - raiz_delta) / (2 * a)
+raiz1 = (- b + raiz_delta) / (2 * a)
+raiz2 = (- b - raiz_delta) / (2 * a)
 
-print(f'As raízes são {x1} e {x2}')
+print(f'As raízes são {raiz1} e {raiz2}')
