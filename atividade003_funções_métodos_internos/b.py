@@ -14,4 +14,4 @@ baixo = math.floor(divisão)
 if divisão // 1 == divisão:
     print(f'O resultado é {divisão}')
 else:
-    print(f'o resultado é {cima} ou {baixo} (arrendondado para cima e para baixo respectivamente)')
+    print(f'o resultado é: {cima} ou {baixo}')
