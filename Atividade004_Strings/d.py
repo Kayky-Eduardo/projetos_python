@@ -14,3 +14,4 @@ print(maiuscula)
 print(quantidade_de_caracteres)
 
 lista = frase.split(',')
+print(f'{lista}')
