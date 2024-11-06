@@ -5,6 +5,11 @@ os.system('cls')
 
 frase = input('Digite uma frase: ')
 
-vogais = frase.count('a', 'e', 'i', 'o', 'u')
+a = frase.count('a')
+e = frase.count('e')
+i = frase.count('i')
+o = frase.count('o')
+u = frase.count('u')
+total = a + e + i + o + u
 
-print(f'O número de vezes que aparece as vogais são {vogais}')
+print(f'O número de vezes que aparece as vogais são {total}')
