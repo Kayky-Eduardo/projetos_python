@@ -3,13 +3,12 @@ import os
 
 os.system('cls')
 
-aluno = input('Nome do aluno: ')
-menor = aluno.lower()
-o = menor.count('o')
+aluno = str(input('Nome do aluno: ')).lower()
+o = aluno.count('o')
 
-if 'o' in menor:
-    primeira = menor.find('o')
-    ultima = menor.rfind('o')
+if 'o' in aluno:
+    primeira = aluno.find('o') + 1
+    ultima = aluno.rfind('o') + 1
     print(f'o número de vezes que a letra o apareceu foi de: {o}')
     if primeira == ultima:
         print(f'A letra o apareceu pela primeira e ultima vez no: {primeira}')
