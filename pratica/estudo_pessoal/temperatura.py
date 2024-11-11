@@ -6,10 +6,10 @@ os.system('cls')
 entrada = input("Digite uma palavra ou frase: ")
 
 # Removendo espaços e convertendo para minúsculas
-entrada = entrada.replace(" ", "").lower()
+corte = entrada.replace(" ", "").lower()
 
 # Comparando a string com sua reversa
-if entrada == entrada[::-1]:
+if entrada == corte[::-1]:
     print("A entrada é um palíndromo.")
 else:
     print("A entrada não é um palíndromo.")
