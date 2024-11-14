@@ -9,11 +9,8 @@ os.system('cls')
 impar = 0
 soma = 0
 
-for i in range(1, 101):
-    if i % 2 != 0:
+for i in range(1, 101, 2):
         impar += 1
         soma += i
-        
-print(impar)
-print(soma)
-        
+print(f'quantidade de impar: {impar}')
+print(f'soma dos números impares: {soma}')

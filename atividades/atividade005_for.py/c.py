@@ -4,9 +4,5 @@ import os
 
 os.system('cls')
 
-inicio = 1
-fim = 10
-
-for i in range(1, 11)[::-1]:
+for i in range(10, 0, -1):
     print(f'{i}', end=' | ')
-    
