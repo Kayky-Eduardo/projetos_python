@@ -18,16 +18,16 @@ while tentativas > 0:
     
     if letra in tentativas_c:
         print(f'Você já tentou essa letra')
+        continue
     if letra in escolhida:
         for i in range(len(escolhida)):
             if letra == escolhida[i]:
-                tentativas_c == letra
+                tentativas_c[i] = letra
     else:
         print('próxima letra!')
         tentativas -= 1
-        
-        if '_' not in tentativas_c:
-            print(f'Você adivinhou a palavra correta: {escolhida} ')
-            break
+    if '_' not in tentativas_c:
+        print(f'Você adivinhou a palavra correta: {escolhida} ')
+        break
 else:
     print(f'\nVocê perdeu! A palavra era: {escolhida}')
