@@ -3,9 +3,8 @@ import os
 
 
 os.system('cls')
-
-for i in range(0, 100 + 1):
-    if i % 2 == 0:
-        i += i
+soma = 0
+for i in range(0, 101, 2):
+        soma += i
         print(i)
-print('Fim!')
+print(f'Quantidade da soma dos números pares: {soma}')
