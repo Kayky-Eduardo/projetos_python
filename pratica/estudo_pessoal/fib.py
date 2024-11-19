@@ -3,11 +3,11 @@ import os
 
 os.system('cls')
 
-n = int(input("Digite o número de termos da sequência de Fibonacci: "))
+n = int(input("Digite o número para sequência de Fibonacci: "))
 
 # Casos especiais
 if n <= 0:
-    print("Nenhum termo")
+    print("Nada")
 elif n == 1:
     print("0")
 elif n == 2:
