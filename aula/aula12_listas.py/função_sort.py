@@ -24,7 +24,7 @@ if ordem == 'asc':
     numeros.sort()
     print(f'Lista ordenada em ordem ascendente: {numeros}')
 elif ordem == 'desc':
-    numeros.sort()
+    numeros.sort(reverse=True)
     print(f'Lista ordenada em ordem descendente: {numeros}')
 else:
     print('Opção inválida! A lista não foi ordenada')

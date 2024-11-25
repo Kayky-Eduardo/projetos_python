@@ -6,16 +6,17 @@ os.system('cls')
 
 lista_nome = []
 lista_nota = []
-for i in range(5):
-    nome = input('Digite o nome do aluno: ')
+
+for i in range(4):
+    nome = input(f'Digite o nome do aluno {i + 1}: ')
     lista_nome.append(nome)
-    nota = input('Nota do aluno: ')
+    nota = float(input('Nota do aluno: '))
     lista_nota.append(nota)
 
 soma = 0
 for i in lista_nota:
     soma += i
     
-media = soma / 4
+media = soma / len(lista_nota)
 
 print(media)
