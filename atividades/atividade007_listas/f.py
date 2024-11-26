@@ -5,11 +5,16 @@ import random
 os.system('cls')
 
 lista = []
+lista_a = []
+lista_d = []
+
 for i in range(10):
     lista.append(random.randint(1, 100))
-
+    
 lista.sort()
-print(f'Lista ascendente: {lista}')
+lista_a = lista
+print(f'Lista ascendente: {lista_a}')
 
-lista.reverse()
-print(f'Lista descendente: {lista}')
+lista.sort(reverse=True)
+lista_desc = lista
+print(f'Lista descendente: {lista_desc}')

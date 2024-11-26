@@ -16,7 +16,6 @@ for i in lista:
     if i % 2 == 0:
         lista_pares.append(i)
     else:
-        lista_impar.append(i)
-        
-print(f'Números pare: {lista_pares}')
+        lista_impar.append(i)    
+print(f'Números pares: {lista_pares}')
 print(f'Números ímpares: {lista_impar}')
