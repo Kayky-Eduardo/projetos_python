@@ -38,3 +38,5 @@ while True:
     elif resposta == '3':
         print('Saindo...')
         break
+    else:
+        print('Opção invalida, tente novamente!')
