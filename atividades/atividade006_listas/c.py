@@ -14,10 +14,10 @@ lista_numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
 
 print(f'Intervalo de 1 até 9: {lista_numeros[:9]}')
 print(f'Intervalo de 8 até 13: {lista_numeros[7:13]}')
-print(f'Números pares: {lista_numeros[2:15:2]}')
-print(f'Números ípares: {lista_numeros[1:15:2]}\n')
+print(f'Números pares: {lista_numeros[1:15:2]}')
+print(f'Números ímpares: {lista_numeros[2:15:2]}\n')
 
-print('Os números mutiplos de 2,3 e 4 são:')
+print('Os números múltiplos de 2, 3 e 4 são:')
 for i in lista_numeros:
     if i % 2 == 0 or i % 3 == 0 or i % 4 == 0:
         print(i, end=' ')

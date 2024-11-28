@@ -7,7 +7,7 @@ os.system('cls')
 vogais = []
 
 for i in range(5):
-    entrada = input('Digite as vogais: ').lower()
+    entrada = input('Digite as vogais: ').lower().replace(' ', '')
     if entrada in 'aeiou':
         vogais.append(entrada)
     else:

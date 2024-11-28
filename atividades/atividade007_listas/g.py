@@ -7,13 +7,14 @@ os.system('cls')
 
 print('-----MEGA SENA-----')
 print('Números escolhidos: ')
-for i in range(6):
-    numeros = [random.randint(1, 100)]
-    print(numeros, end= ' ')
 
+# sample não deixa repetir
+megasena = random.sample(range(1, 61), 6)
+
+print(megasena, end= ' ')
 print('\n')
 print('-----LOTO FÁCIL-----')
 print('Números escolhidos: ')
-for j in range(15):
-    num_loto = [random.randint(1, 100)]
-    print(num_loto, end= ' ')    
+
+num_loto = random.sample(range(1, 26), 15)
+print(num_loto, end= ' ')    

@@ -16,6 +16,7 @@ itens_walmart = [
     {"preco": 1599.99, "itens": "Smartphone"},
     {"preco": 89.90, "itens": "Óculos de sol"}
 ]
+
 while True:
     print('Próximo cliente.')
     print('1. Procurar item.')
@@ -39,7 +40,7 @@ while True:
                 print('Encontrou o item: ', itens)
                 compra += procura
                 encontrado = True
-            if not encontrado:
+        if not encontrado:
                 print('Não encontrado!')
     print(f'O preço total da compra foi: R${compra}\n')
     print('Métodos de pagamento')
