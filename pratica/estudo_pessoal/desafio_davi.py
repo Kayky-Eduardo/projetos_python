@@ -22,21 +22,27 @@ while True:
     print('2. Sair. ')
     resposta = input('Qual opção deseja escolher: ')
     
-    if resposta == '1':
+    if resposta == '2':
+        print('Saindo...')
+        break
+    
+    elif resposta == '1':
         qntd_prod = int(input('Quantos itens: '))
     
     for i in range(qntd_prod):
         if resposta == '1':
             procura = float(input('Qual o preço do item você deseja '
                                   'encontrar: '))
+            encontrado = False
         for itens in itens_walmart:
             if itens['preco'] == procura:
                 print('Encontrou o item: ', itens)
                 compra += procura
-        else:
-            print('Não encontrado!')
-    print(f'O preço da compra foi: R${compra}')
-    
+                encontrado = True
+            if not encontrado:
+                print('Não encontrado!')
+    print(f'O preço total da compra foi: R${compra}\n')
+    print('Métodos de pagamento')
     print('1. Dinheiro')
     print('2. Pix (25% de desconto). ')
     print('3. Cartão.')
@@ -47,10 +53,13 @@ while True:
         troco = pagamento - compra
         print(f'O seu troco é: {troco}')
     elif resposta == '2':
+        desconto = (compra * 0.25)
+        print(f'Pagamento recebido.')
+        print(f'O desconto foi {desconto:.2f}\n')
+    elif resposta == '3':
         print('Insira o cartão.')
-        cartao = int(input('Senha do cartão: '))
-        if len(cartao) >= 4 or len(cartao) <= 6:
-            print('Obrigado, volte sempre!')
-    if resposta == '2':
-        print('Saindo...')
-        break
+        cartao = (input('Senha do cartão: '))
+        if cartao.isdigit() and 4 <= len(cartao) <= 6:
+            print('Pagamento aprovado. Obrigado e volte sempre!')
+        else:
+            print('Senha inválida. Tente novamente.')
