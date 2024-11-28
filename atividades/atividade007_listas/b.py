@@ -4,14 +4,11 @@ import random
 
 os.system('cls')
 
-lista = []
-
-for i in range(50):
-    aleatorio = random.randint(1, 100)
-    lista.append(aleatorio)
-
-fatiada = []
-for i in range(0, 50, 10):
-    partes = lista[i:i + 10]
-    fatiada.append(partes)
-print(fatiada)
+for i in range(6):
+    lista = []
+    for j in range(0, 51):
+        lista.append(random.randint(1, 100))
+        qntd = len(lista)
+        if qntd > 9:
+            break
+    print(lista)

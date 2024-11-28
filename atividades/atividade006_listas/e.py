@@ -13,5 +13,4 @@ for i in range(5):
     else:
         print('Não é uma vogal')
         i -= 1
-
 print(f'Ordem inversa: {vogais[::-1]}')
