@@ -52,7 +52,7 @@ while True:
     if resposta == '1':
         pagamento = float(input('Pagamento: '))
         troco = pagamento - compra
-        print(f'O seu troco é: {troco}')
+        print(f'O seu troco é: {troco:.2f}')
     elif resposta == '2':
         desconto = (compra * 0.25)
         print(f'Pagamento recebido.')
