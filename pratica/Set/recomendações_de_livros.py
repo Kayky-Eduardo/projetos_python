@@ -12,7 +12,7 @@ print(f'Todos os filmes: {uniao}\n')
 
 
 print('Escolha o tipo de recomendação:')
-print('1 - Filmes recomendados para o usuário 1 (não assistidos por ele, mas assistidos por 2)')
+print('1 - Filmes recomendados para o usuário 1 (não assistidos por ele, mas assistidos por usuario 2)')
 print('2 - Filmes que ambos assistiram')
 
 opcao = input('Qual opção deseja escolher: ')

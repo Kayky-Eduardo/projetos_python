@@ -28,10 +28,10 @@ seguindo = {
 }
 
 # Recomendações de amigos para seguir
-# 1. Quem os seguidores seguem (mas não segue o usuário)
+# Quem os seguidores seguem (mas não segue o usuário)
 recomendacoes_seguidores = seguidores.difference(seguindo)
 
-# 2. Quem o usuário segue, mas não o segue de volta
+# Quem o usuário segue, mas não o segue de volta
 recomendacoes_usuario = seguindo.difference(seguidores)
 
 # Exibindo as recomendações
