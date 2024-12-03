@@ -28,8 +28,8 @@ aventura = {'O Senhor dos Anéis: A Sociedade do Anel',
             'A Jornada de um Jovem Titã'}
 
 listas_temas = [terror, acao, suspense, romance, aventura]
-usuario = {'Hereditário', 'John Wick', 'Garota Exemplar', 'Titanic', 'Jurassic Park'}
-
+usuario = {'Hereditário', 'John Wick', 'Garota Exemplar',
+           'Titanic', 'Jurassic Park'}
 
 print(f'Temas disponíveis: {temas}')
 questao = input('Digite o seu tema favorito: ').lower()
@@ -43,7 +43,7 @@ if questao in temas:
 else:
     print('Tema não encontrado.')
     exit()
-
+ 
 while True:
     print('='*70)
     print('1. Adicionar filmes à lista de favoritos.')
