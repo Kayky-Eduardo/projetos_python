@@ -1,34 +1,18 @@
-# import os
+import os
+import copy
+
+os.system('cls')
 
 
-# os.system('cls')
-# lista = []
-# while True:
-#     print('1. Adicionar')
-#     print('2. procurar')
-#     print('3. sair')
-#     procura = input('Deseja procurar? ')
-#     if procura == '2':
-#         nome_proc = input('Qual chave? ')
-#         for nome in lista:
-#             encontrou = False
-#             if nome[chaves] == nome_proc.lower():
-#                 print('Usuario encontrado: ', nome)
-#                 encontrou = True
-#         if not encontrou:
-#             print(f'Pessoa {nome_proc} não encontrada')
-#     if procura == '1':
-#         chaves = input("Digite as chaves: ")
-#         valor_padrao = input("Digite o valor: ")
-#         meu_dicionario = dict.fromkeys(chaves, valor_padrao)
-#         lista.append(meu_dicionario)
-#         print(lista)
-#     if procura == '3':
-#         break
+d1 = {
+    'nome': 'kayky',
+    'email': 'Jos@',
+    'num': [1, 2, 3]
+}
 
-dicio = {'chave': 10,
-        'valor': 20}
-
-pegando = dicio.items()
-
-print(pegando)
+d2 = d1.copy()
+d1['num'] = tuple(d1['num'])
+d2['num'][1] = 10
+d1['num'] = list(d1['num'])
+print(d1)
+print(d2)
