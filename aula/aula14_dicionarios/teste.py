@@ -14,17 +14,30 @@ while True:
     escolha = input('Escolha uma opção: ')
 
     if escolha == '1':
-        nomes = input('Digite seu nome: ').lower()
-        email = input('Insira seu email: ')
-        idade = int(input('Digite sua idade: '))
-        peso = float(input('Digite seu peso: '))
-
+        while True:
+            nomes = input('Digite seu nome: ').lower()
+            email = input('Insira seu email: ')
+            idade = int(input('Digite sua idade: '))
+            peso = float(input('Digite seu peso: '))
+            if nomes and email:   # se tiver preenchido
+                pos_a = email.find('@')
+                servidor = email[pos_a:]
+                tamanho = len(servidor)
+                if pos_a != -1 and '.' in servidor and tamanho >= 10:
+                    print('Cadastro concluído')
+                    break
+                else:
+                    print('Email inválido')
+            else:
+                print('O Email não foi encontrado')
+                break
         cliente = {
             'Nomes': nomes,
             'email': email,
             'idade': idade,
             'peso': peso
             }
+        
         pessoas.append(cliente)
 
     elif escolha == '2':
