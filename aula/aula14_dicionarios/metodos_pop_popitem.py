@@ -28,7 +28,7 @@ while True:
             valor_removido = Meu_dicionario.pop(chave, 'Chave não encontrada')
         else:
             print('O dicionário está vazio. Adicione itens primeiros.')
-    
+
     elif opcao == '3':
         # Remover o último item usando popitem()
         if Meu_dicionario:
@@ -47,6 +47,5 @@ while True:
     elif opcao == '5':
         print('Saindo do programa.')
         break
-
     else:
         print('Opção inválida. Tente novamente.')
