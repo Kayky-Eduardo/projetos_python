@@ -12,7 +12,11 @@ dicio = {}
 
 for i in range(1, 5):
     chave = input('Escolha uma chave: ')
-    valor = input('Dê um valor para a chave: ')
-    dicio[chave] = valor
-
+    if chave in dicio:
+        print('Essa chave já está no dicionário.')
+    else:
+        valor = input('Dê um valor para a chave: ')
+        dicio[chave] = valor
+        input('Enter para continuar...')
+        os.system('cls')
 print(dicio)
