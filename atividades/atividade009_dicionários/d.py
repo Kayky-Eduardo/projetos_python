@@ -39,32 +39,35 @@ while True:
 
     if opcao == '2':
         if dicio:
-            print(dicio)
+            for chave, valor in dicio.items():
+                print(f'{chave}: {valor}')   
             nome_vinho = input('Qual vinho deseja modificar: ').capitalize()
             if nome_vinho in dicio:
-                mudar = input('Digite oque deseja modificar: ').lower()
-                if mudar == 'tipo':
-                    novo_tipo = input('Insira o novo tipo: ')
-                    dicio[nome_vinho]['Tipo'] = novo_tipo
-                elif mudar == 'teor alcoólico':
-                    novo_teor = float(input('Insira o novo Teor alcoólico: '))
-                    dicio[nome_vinho]['Teor alcoólico'] = novo_teor
-                elif mudar == 'safra':
-                    nova_safra = int(input('Insira uma nova safra: '))
-                    dicio[nome_vinho]['Safra'] = nova_safra
-                print('Mudança feita.')
+                mudar = input('Digite oque deseja modificar: ').capitalize()
+                if mudar in dicio[nome_vinho]:
+                    novo = input('Digite o que quer colocar no lugar: ')
+                    dicio[nome_vinho][mudar] = novo
+                    print('Mudança feita.')
+                else:
+                    print('Classificação não encontrada.')
             else:
                 print('Vinho não encontrado.')
         else:
             print('Nada cadastrado atualmente.')
             
     elif opcao == '3':
-        for nome, info in dicio.items():
-            print('-'*70)
-            print(f'{nome}:\nTipo: {info["Tipo"]}\n'
-                  f'Teor alcoólico: {info["Teor alcoólico"]}\n'
-                  f'Safra: {info["Safra"]}')
-            
+        if dicio:
+            os.system('cls')
+            for nome, info in dicio.items():
+                # breve explicação para caso eu me esqueça
+                # nome vai virar o dicionario q está dentro do dicionario e eu vou buscar os dados dele por info
+                # poderia fazer de um jeito mais curto igual no 2 mas assim fica mais bonito
+                print('-'*70)
+                print(f'{nome}:\nTipo: {info["Tipo"]}\n'
+                    f'Teor alcoólico: {info["Teor alcoólico"]}%\n'
+                    f'Safra: {info["Safra"]}')
+        else:
+            print('Lista vazia.')    
     elif opcao == '4':
         if dicio:
             cont_teor = 0

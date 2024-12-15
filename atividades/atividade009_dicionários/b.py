@@ -38,9 +38,6 @@ while True:
                 print(f'O valor da cor "{escolha}" foi atualizado para "{novo_valor}".')
             else:
                 print(f'A cor "{escolha}" não está no dicionário.')
-            # del dicio[escolha]
-            # valor = input('Escolha um valor para a cor: ')
-            # dicio[escolha] = valor
 
     elif resp == '3':
         ord_alf = sorted(dicio)
