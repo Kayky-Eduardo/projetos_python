@@ -71,10 +71,14 @@ while True:
         cnt_total = 0
         cnt_apos = 0
         for evento, info_data in lista_de_eventos.items():
-            data_evento = datetime.strptime(info_data['Data'], '%d/%m/%Y')
+            data_evento = datetime.strptime(info_data['Data'], r'%d/%m/%Y')
             if data_evento > datetime(2025, 1, 1):
                 cnt_apos += 1
             if info_data['Participante']:
                 cnt_total += len(info_data['Participante'])
         print(f'{cnt_apos} Eventos ocorrem após a data de 01/01/2025')
         print(f'{cnt_total} Participantes no total')
+    
+    elif opcao == '5':
+        print('Saindo.')
+        break
