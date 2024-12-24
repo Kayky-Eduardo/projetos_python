@@ -3,27 +3,46 @@ import os
 
 os.system('cls')
 
-compras = []
+
+produtos = {}
+
 
 while True:
-    print('1. Adicionar')
-    print('2. Remover')
-    print('3. Mostrar a lista')
-    resp = input('Qual opção deseja escolher: ')
-    
-    if resp == '1':
-        qntd_ad = int(input('Quantos itens deseja adicionar: '))
-        for i in range(qntd_ad):
-            adicionar = input('escreva oque deseja adicionar: ').capitalize()
-            compras.append(adicionar)
-    elif resp == '2':
-        qntd_r = int(input('Quantos itens deseja remover: '))
-        for i in range(qntd_r):
-            remover = input('Oque deseja remover: ').capitalize()
-            if remover in compras:
-                compras.remove(remover)
-                print(f'Item removido')
-            else:
-                print(f'Item não encontrado')
-    elif resp == '3':
-        print(f'Lista: {compras}')
+    print('-'*70)
+    print('1. Registrar produto.')
+    print('2. Aplicar desconto.')
+    print('3. Alterar dado de um produto')
+    print('4. Relatório.')
+    print('5. Sair.')
+    print('-'*70)
+
+    opcao = input('Escolha uma das opções: ')
+
+    if opcao == '1':
+        os.system('cls')
+        nome = input('Digite o nome do produto: ').capitalize()
+        preco = float(input('Insira o valor do produto: '))
+        categoria = input('Digite a categoria do produto: ')
+        produtos[nome] = {'Preço': preco, 'Categoria': categoria}
+        pergunta_desconto = input('Deseja adicionar desconto(s/n): ')
+        if pergunta_desconto == 's':
+            desconto = float(input('Insira o valor do desconto'))
+        
+    elif opcao == '3':
+        os.system('cls')
+        if produtos:
+            print('Produtos cadastrados:')
+            for i, j in produtos.items():
+                print(f'{i}: {j}')
+                print('-'*70)
+            escolher = input('Qual produto deseja escolher: ').capitalize()
+            if escolher in produtos:
+                print(f'Produto selecionado {escolher}: {produtos[escolher]}')
+                mudar = input('O que deseja mudar: ').capitalize()
+                if mudar in produtos[escolher]:
+                    if mudar != categoria:
+                        novo_valor = float(input('Insira o novo dado: '))
+                        produtos[escolher][mudar] = novo_valor
+                    else:
+                        nova_categ = input('Insira a categoria: ')
+                        produtos[escolher][mudar] = nova_categ    

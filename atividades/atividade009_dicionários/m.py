@@ -31,7 +31,7 @@ while True:
                                 f'da viagem {destino}: ').capitalize()
         duracao = input(f'Digite a duração(horas:minutos:segundos) '
                          f'da viagem {destino}: ')
-        vagas = input(f'Número de vagas disponíveis: ')
+        vagas = int(input(f'Número de vagas disponíveis: '))
         viagens[destino] = {'Data de partida': data_de_partida,
                             'Duração da viagem': duracao,
                             'Vagas disponíveis': vagas}
@@ -79,15 +79,17 @@ while True:
         os.system('cls')
         conta_vagas = 0
         apos_data = 0
-        for v, info in viagens.items():
-            comparar_data = int(info['Data de partida'].split(':'))
-            if comparar_data[2] > 2025:
+        for info in viagens.values():
+            dia, mes, ano = map(int, info['Data de partida'].split('/'))
+            if ano > 2025:
                 apos_data += 1
-            elif comparar_data[2] == 2025:
-                if comparar_data[1] >= 6:
-                    if comparar_data[0] >= 1:
+            elif ano == 2025:
+                if mes >= 6:
+                    if dia >= 1:
                         apos_data += 1
-            if info['Vagas disponíveis'] < 10:
+                else:
+                    apos_data += 1
+            if int(info['Vagas disponíveis']) < 10:
                 conta_vagas += 1
         print(f'{conta_vagas} viagens tem menos de 10 vagas')
         print(f'{apos_data} viagens ocorrem após a data "01/06/2025"')

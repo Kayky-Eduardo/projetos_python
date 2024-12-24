@@ -67,9 +67,8 @@ while True:
             print('Nenhuma tarefa cadastrada.')
     
     elif opcao == '3':
-        for evento, info_data in tarefas.items():
-            data_tarefa = datetime.datetime.strptime(
-            info_data['Data de vencimento'], r'%d/%m/%Y')
+        for info_data in tarefas.values():
+            data_tarefa = map(int, info_data['Data de vencimento'].split('/'))
             if data_tarefa > datetime(2025, 1, 13):
                 print(f'Data de vencimento {data_tarefa} Prioridade: '
                       f'{info_data['Prioridade']}')
