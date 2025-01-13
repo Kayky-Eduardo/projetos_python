@@ -23,6 +23,7 @@ while True:
     opcao = input('Escolha uma das opções: ')
 
     if opcao == '1':
+        os.system('cls')
         nome = input('Digite o nome da tarefa: ').capitalize()
         data_vencimento = input('Digite a data de vencimento da tarefa'
                                 '(dd/mm/aaaa): ')
@@ -65,32 +66,26 @@ while True:
         tarefas_ordenadas = sorted(tarefas.items(), key=lambda x: x[1]['Data de vencimento'])
         print('Lista de tarefas ordenadas por data de vencimento:')
         for nome, dados in tarefas_ordenadas:
-            print(f'Tarefa: {nome}, Vencimento: {dados['Data de vencimento']}, '
-                  f'Prioridade: {dados['Prioridade']}')
+            print(f'Tarefa: {nome}, Vencimento: {dados["Data de vencimento"]}, '
+                  f'Prioridade: {dados["Prioridade"]}')
+            
         for info_data in tarefas.values():
             dia, mes, ano = map(int, info_data['Data de vencimento'].split('/'))
-            if mes < 12:
-                proximo_m = mes + 1
+            mes_atual = 1
+            if mes_atual < 12:
+                proximo_m = mes_atual + 1
             else:
                 proximo_m = 1
-            if mes < 12:
+            if mes_atual < 12:
                 proximo_a = ano
             else:
                 proximo_a = ano + 1
-            if ano < 2025:
-                if mes < 3:
-                    print(f'Data de vencimento {dia, mes, ano} Prioridade: '
-                          f'{info_data["Prioridade"]}')
-                else:
-                    continue
-            else:
-                continue
-        
+
         prioridade_alta = sum(1 for t in tarefas.values()
                               if t['Prioridade'] == 'Alta')
-        mes_proximo_str = (f"{proximo_a:04}/{proximo_m:02}")
+        mes_vem = mes_atual + 1
         vencimento =  sum(1 for t in tarefas.values() 
-        if t['Data de vencimento'].startswith(mes_proximo_str))
+        if int(t['Data de vencimento'].split('/')[1]) == mes_vem)
 
         print(f'{prioridade_alta} tarefas possuem prioridade alta')
         print(f'{vencimento} tarefas possuem vencimento no próximo mês')

@@ -76,7 +76,7 @@ while True:
                 print(f'Filme: {filme}')
                 print(f'Gênero: {dados["Gênero"]}')
                 print(f'Duração: {dados["Duração"]}')
-                print(f'Classificação: {dados['Classificação']}')
+                print(f'Classificação: {dados["Classificação"]}')
         else:
             print('Nenhum filme registrado.')
 
