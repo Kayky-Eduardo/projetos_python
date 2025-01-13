@@ -25,7 +25,7 @@ while True:
 
     if opcao == '1':
         os.system('cls')
-        nome = input('Digite o nome do equipamento: ')
+        nome = input('Digite o nome do equipamento: ').capitalize()
         tipo = input('Insira o tipo do equipamento'
                      '(musculação, cardio, etc): ').capitalize()
         quantidade = int(input('Quantidade de equipamentos: '))
@@ -43,7 +43,54 @@ while True:
         for tipo in sorted(equipamentos_por_tipo.keys()):
             print(f'\nTipo: {tipo}')
             for nome, dados in equipamentos_por_tipo[tipo]:
-                print(f'Nome: {nome}, Quantidade: {dados["Quantidade"]}, Estado: {dados["Estado"]}')
+                print(f'Nome: {nome}, Quantidade: {dados["Quantidade"]}, '
+                      f'Estado: {dados["Estado"]}')
 
     elif opcao == '2':
-        continue
+        os.system('cls')
+        if equipamentos:
+            print('Equipamentos cadastrados:')
+            for i, j in sorted(equipamentos.items()):
+                print(f'{i}: {j} ')
+            escolher = input('Qual deseja mudar: ').capitalize()
+            if escolher in equipamentos:
+                os.system('cls')
+                print(f'Item selecionado:\n{escolher} '
+                      f'{equipamentos[escolher]}')
+                mudar = input('O que deseja mudar: ').capitalize()
+                if mudar in equipamentos[escolher]:
+                    novo_valor = input('Digite o que deseja colocar '
+                                       f'no lugar de {mudar}: ')
+                    if mudar == 'Quantidade':
+                        novo_valor = int(novo_valor)
+                    equipamentos[escolher][mudar] = novo_valor
+                else:
+                    print('opção desconhecida')
+            else:
+                print('Item inexistente.')
+        else:
+            print('Lista de equipamentos vazia')
+            
+    elif opcao == '3':
+        os.system('cls')
+        equipamentos_por_tipo = {}
+        precisa_reparo = 0
+        cardio = 0
+        
+        for nome, dados in equipamentos.items():
+            tipo = dados['Tipo']
+            if tipo == 'Cardio':
+                cardio += 1
+            if dados['Estado'] == 'Necessitando reparos':
+                precisa_reparo += 1
+            if tipo not in equipamentos_por_tipo:
+                equipamentos_por_tipo[tipo] = []
+            equipamentos_por_tipo[tipo].append((nome, dados))
+            
+        print('Relatório:\n')
+        print(f'Equipamentos necessitando de reparos: {precisa_reparo}')
+        print(f'Equipamentos que estão na categoria "Cardio": {cardio}')
+        
+    elif opcao == '4':
+        print('Saindo...')
+        break

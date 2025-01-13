@@ -5,13 +5,7 @@
 # programa deve listar todas as tarefas ordenadas pela data de vencimento e
 # gerar um relatório que informe quantas tarefas possuem prioridade alta e
 # quantas têm vencimento no próximo mês.
-
-
-
-# PROGRAMA INCOMPLETO
 import os
-import datetime
-
 
 os.system('cls')
 
@@ -67,8 +61,36 @@ while True:
             print('Nenhuma tarefa cadastrada.')
     
     elif opcao == '3':
+        os.system('cls')
+        tarefas_ordenadas = sorted(tarefas.items(), key=lambda x: x[1]['Data de vencimento'])
+        print('Lista de tarefas ordenadas por data de vencimento:')
+        for nome, dados in tarefas_ordenadas:
+            print(f'Tarefa: {nome}, Vencimento: {dados['Data de vencimento']}, '
+                  f'Prioridade: {dados['Prioridade']}')
         for info_data in tarefas.values():
-            data_tarefa = map(int, info_data['Data de vencimento'].split('/'))
-            if data_tarefa > datetime(2025, 1, 13):
-                print(f'Data de vencimento {data_tarefa} Prioridade: '
-                      f'{info_data['Prioridade']}')
+            dia, mes, ano = map(int, info_data['Data de vencimento'].split('/'))
+            if mes < 12:
+                proximo_m = mes + 1
+            else:
+                proximo_m = 1
+            if mes < 12:
+                proximo_a = ano
+            else:
+                proximo_a = ano + 1
+            if ano < 2025:
+                if mes < 3:
+                    print(f'Data de vencimento {dia, mes, ano} Prioridade: '
+                          f'{info_data["Prioridade"]}')
+                else:
+                    continue
+            else:
+                continue
+        
+        prioridade_alta = sum(1 for t in tarefas.values()
+                              if t['Prioridade'] == 'Alta')
+        mes_proximo_str = (f"{proximo_a:04}/{proximo_m:02}")
+        vencimento =  sum(1 for t in tarefas.values() 
+        if t['Data de vencimento'].startswith(mes_proximo_str))
+
+        print(f'{prioridade_alta} tarefas possuem prioridade alta')
+        print(f'{vencimento} tarefas possuem vencimento no próximo mês')

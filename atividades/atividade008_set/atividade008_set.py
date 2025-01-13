@@ -64,6 +64,7 @@ while True:
             print(f'O filme "{ad}" não foi encontrado no tema "{questao}".')
 
     elif resposta == '2':
+        os.system('cls')
         remover = input('Qual filme deseja remover: ').strip()
         if remover in favoritos:
             favoritos.remove(remover)
@@ -72,12 +73,15 @@ while True:
             print(f'O filme "{remover}" não foi encontrado' 
                   f'na sua lista de favoritos.')
             print(f'Filmes presentes na lista de favoritos: {favoritos}')
+            
     elif resposta == '3':
-        print()
+        os.system('cls')
         print('-'*70)
         print(f'Lista de favoritos: {favoritos}')
         print('-'*70)
+        
     elif resposta == '4':
+        os.system('cls')
         print('\nFilmes que seu amigo já viu:')
         for filme in usuario:
             print(f'{filme}')

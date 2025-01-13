@@ -16,28 +16,37 @@ import os
 
 os.system('cls')
 
-dicio = {'Martelo': 'Martelo com cabeça de metal',
-         'Colher': 'Usada para para aplicar e alisar argamassa, concreto'
-        'e outros materiais em alvenaria',
-        'Cinta': 'Ferramente de ajuste e medição',
-        'Linha': 'Ferramente de marcação',
-        'Desempenadeira':'Ferramenta de acabamento'
-          }
-
+dicio = {
+  'Martelo': {'Descrição': 'Martelo com cabeça de metal',
+              'Material': 'Metal e madeira'},
+  'Colher': {'Descrição': 'Usada para aplicar e alisar materiais '
+              'em alvenaria', 'Material': 'Aço inoxidável e madeira'},
+  'Cinta': {'Descrição': 'Ferramenta de ajuste e medição',
+            'Material': 'Metal e plástico'},
+  'Linha': {'Descrição': 'Ferramenta de marcação',
+            'Material': 'Nylon ou poliéster'},
+  'Desempenadeira': {'Descrição': 'Ferramenta de acabamento',
+                      'Material': 'Aço inoxidável ou plástico'}
+}
 
 print('Dicionário atual:\n')
 print('-'*70)
 for ferramenta, descricao in dicio.items():
     print(f"- {ferramenta}: {descricao}")
   
-print('='*70)
+print('-'*70)
+
 escolha = input('Escolha uma das ferramentas: ').capitalize()
-
 if escolha in dicio:
-    novo_sentido = input(f'Digite uma descrição para a ferramenta '
-                         f'{escolha}: ')
-    dicio[escolha] = novo_sentido
-
+    mudar = input(f'O que deseja mudar em {escolha}: ').capitalize()
+    if mudar in dicio[escolha]:
+      novo_sentido = input('Escreva o que deseja colocar no lugar: ')
+      dicio[escolha][mudar] = novo_sentido
+    else:
+      print('Opção não encontrada')
+else:
+  print('Ferramenta não presente no dicionário')
+  
 print('\nFerramentas armazenadas em ordem alfabética:')
 for ferramenta in sorted(dicio):
   print('-'*70)
