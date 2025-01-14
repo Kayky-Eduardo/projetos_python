@@ -1,13 +1,13 @@
 #d) Desenvolva um programa que permita ao usuário cadastrar informações sobre
 #5 tipos de vinho. Para cada vinho, o programa deve coletar as seguintes infor
-# mações: nome do vinho, tipo (como tinto, branco, rosé, etc.), teor alcoólico
-# e safra. Após o cadastro das informações, o programa deve exibir uma lista 
-# detalhada com todos os vinhos cadastrados, incluindo as informações de nome,
-# tipo, teor alcoólico e safra. Além disso, o programa deve permitir ao usuário
-# modificar os dados de qualquer vinho previamente cadastrado. Por fim, o 
-# programa deve gerar um relatório que informe quantos vinhos possuem 
-# alcoólico superior a 12% e quantos pertencem a safra superior ao ano de 2015,
-# além de ordenar os vinhos por nome de forma crescente e exibi-los
+#mações: nome do vinho, tipo(como tinto, branco, rosé, etc.), teor alcoólico
+#e safra. Após o cadastro das informações, o programa deve exibir uma lista 
+#detalhada com todos os vinhos cadastrados, incluindo as informações de nome,
+#tipo, teor alcoólico e safra. Além disso, o programa deve permitir ao usuário
+#modificar os dados de qualquer vinho previamente cadastrado. Por fim, o 
+#programa deve gerar um relatório que informe quantos vinhos possuem teor
+#alcoólico superior a 12% e quantos pertencem a safra superior ao ano de 2015
+#além de ordenar os vinhos por nome de forma crescente e exibi-los
 import os
 
 
@@ -20,7 +20,7 @@ while True:
     print('1. Adicionar 5 tipos de vinho.')
     print('2. Modificar um vinho cadastrado')
     print('3. Exibir lista dos vinhos cadastrados.')
-    print('4. Mostrar o teor alcoólico.')
+    print('4. Relatório.')
     print('5. Sair.')
     print('-'*70)
 
@@ -45,7 +45,7 @@ while True:
             if nome_vinho in dicio:
                 mudar = input('Digite oque deseja modificar: ').capitalize()
                 if mudar in dicio[nome_vinho]:
-                    novo = input('Digite o que quer colocar no lugar: ')
+                    novo = input('Digite o que deseja colocar no lugar: ')
                     dicio[nome_vinho][mudar] = novo
                     print('Mudança feita.')
                 else:
@@ -56,8 +56,8 @@ while True:
             print('Nada cadastrado atualmente.')
             
     elif opcao == '3':
+        os.system('cls')
         if dicio:
-            os.system('cls')
             for nome, info in dicio.items():
                 # breve explicação para caso eu me esqueça
                 # nome vai virar o dicionario q está dentro do dicionario e eu vou buscar os dados dele por info

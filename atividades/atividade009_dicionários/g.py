@@ -66,6 +66,7 @@ while True:
             
     elif opcao == '5':
         os.system('cls')
+        print(f'O dicionário possui {len(dicionario)} dados')
         print('Estado final do dicionário:\n')
         for chave, valor in dicionario.items():
             print(f'{chave}: {valor}')

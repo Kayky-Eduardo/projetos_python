@@ -8,7 +8,11 @@ import os
 
 os.system('cls')
 
-dicio = {}
+dicio = {'Cor': 'Pardo',
+         'Nome': 'Kayky',
+         'Idade': 18,
+         'Cabelo': 'Ondulado'
+         }
 
 for i in range(1, 5):
     chave = input('Escolha uma chave: ')
@@ -19,4 +23,6 @@ for i in range(1, 5):
         dicio[chave] = valor
         input('Enter para continuar...')
         os.system('cls')
-print(dicio)
+
+for i, j in sorted(dicio.items()):
+    print(f'{i}: {j}')

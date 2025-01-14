@@ -17,11 +17,10 @@ print(dividir())
 
 strings = ["Python", "é", "muito", "legal"]
 comprimentos = map(lambda s: len(s), strings)
-print(list(comprimentos)) 
+print(list(comprimentos))
 
 iteravel = map(list, strings)
 print(list(iteravel))
-
 
 def laerc():
     cnt = 0
