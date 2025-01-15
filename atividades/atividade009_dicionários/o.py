@@ -83,10 +83,7 @@ while True:
                 cardio += 1
             if dados['Estado'] == 'Necessitando reparos':
                 precisa_reparo += 1
-            if tipo not in equipamentos_por_tipo:
-                equipamentos_por_tipo[tipo] = []
-            equipamentos_por_tipo[tipo].append((nome, dados))
-            
+                     
         print('Relatório:\n')
         print(f'Equipamentos necessitando de reparos: {precisa_reparo}')
         print(f'Equipamentos que estão na categoria "Cardio": {cardio}')

@@ -7,8 +7,8 @@
 # quantas têm vencimento no próximo mês.
 import os
 
-os.system('cls')
 
+os.system('cls')
 
 tarefas = {}
 
@@ -62,11 +62,12 @@ while True:
     
     elif opcao == '3':
         os.system('cls')
-        tarefas_ordenadas = sorted(tarefas.items(), key=lambda x: x[1]['Data de vencimento'])
+        tarefas_ordenadas = sorted(tarefas.items(), key=lambda x: 
+            x[1]['Data de vencimento'])
         print('Lista de tarefas ordenadas por data de vencimento:')
         for nome, dados in tarefas_ordenadas:
-            print(f'Tarefa: {nome}, Vencimento: {dados['Data de vencimento']}, '
-                  f'Prioridade: {dados['Prioridade']}')
+            print(f'Tarefa: {nome}, Vencimento: {dados["Data de vencimento"]}, '
+                  f'Prioridade: {dados["Prioridade"]}')
         for info_data in tarefas.values():
             dia, mes, ano = map(int, info_data['Data de vencimento'].split('/'))
             if mes < 12:
@@ -77,20 +78,11 @@ while True:
                 proximo_a = ano
             else:
                 proximo_a = ano + 1
-            if ano < 2025:
-                if mes < 3:
-                    print(f'Data de vencimento {dia, mes, ano} Prioridade: '
-                          f'{info_data["Prioridade"]}')
-                else:
-                    continue
-            else:
-                continue
-        
+                 
         prioridade_alta = sum(1 for t in tarefas.values()
                               if t['Prioridade'] == 'Alta')
-        mes_proximo_str = (f"{proximo_a:04}/{proximo_m:02}")
-        vencimento =  sum(1 for t in tarefas.values() 
-        if t['Data de vencimento'].startswith(mes_proximo_str))
+        vencimento = sum(1 for i in tarefas.values()
+            if int(i['Data de vencimento'].split('/')[1]) == proximo_m)
 
         print(f'{prioridade_alta} tarefas possuem prioridade alta')
         print(f'{vencimento} tarefas possuem vencimento no próximo mês')
