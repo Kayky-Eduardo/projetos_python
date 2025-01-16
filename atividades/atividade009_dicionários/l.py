@@ -34,7 +34,21 @@ while True:
         cinema[filme] = {'Gênero': genero,
                         'Duração': duracao,
                         'Classificação': classificacao}
-    
+
+        try:
+            validacao = duracao.split(':')
+            hora = int(validacao[0])
+            min = int(validacao[1])
+            sec = int(validacao[2])
+            if filme == '' or genero == '' or classificacao == '':
+                os.system('cls')
+                del cinema[filme]
+                print('Filme não cadastrado, devido a área(s) em branco.')
+        except:
+            print('A Duração não foi preenchida de forma correta, '
+                  'tente novamente.')
+            del cinema[filme]
+
     elif opcao == '2':
         if cinema:
             os.system('cls')
@@ -72,22 +86,22 @@ while True:
                 print(f'Classificação: {dados["Classificação"]}')
                 print('-'*70)
 
-    elif opcao == '4':            
-        os.system('cls')
-        if cinema:
-            cnt_duracao = 0
-            class_livre = 0
-            for filme, info in cinema.items():
-                comparar_duracao = int(info['Duração'].split(':')[0])
-                if comparar_duracao > 2:
-                    cnt_duracao += 1
-                if info['Classificação'] == 'Livre':
-                    class_livre += 1
-            print(f'{cnt_duracao} filme(s) possui(em) mais '
-                  'de 2hrs de duração.')
-            print(f'{class_livre} filme(s) possui(em) "Livre" como '
-                  'classificação como classificação')
-            
+    elif opcao == '4':
+            os.system('cls')
+            if cinema:
+                cnt_duracao = 0
+                class_livre = 0
+                for filme, info in cinema.items():
+                    comparar_duracao = int(info['Duração'].split(':')[0])
+                    if comparar_duracao > 2:
+                        cnt_duracao += 1
+                    if info['Classificação'] == 'Livre':
+                        class_livre += 1
+                print(f'{cnt_duracao} filme(s) possui(em) mais '
+                    'de 2hrs de duração.')
+                print(f'{class_livre} filme(s) possui(em) "Livre" como '
+                    'classificação')
+
     elif opcao == '5':
         print('Saindo...')
         break
