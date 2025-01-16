@@ -25,11 +25,9 @@ for chave, valor in dicionario.items():
 
 del dicionario['peso']
 
-print()
-print('Após a exclusão da chave "peso"')
+print('\nApós a exclusão da chave "peso"')
 for chave, valor in dicionario.items():
     print(f'{chave}: {valor}')
 
-print()
-print('Apenas nome e altura.')
+print('\nApenas nome e altura.')
 print(f'Nome: {dicionario["nome"]}, Altura: {dicionario["altura"]}')

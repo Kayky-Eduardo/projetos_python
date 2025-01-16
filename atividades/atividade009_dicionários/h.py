@@ -1,4 +1,4 @@
-#h) Programa de Cadastro de Livros: Crie um programa para cadastrar livros em
+# Programa de Cadastro de Livros: Crie um programa para cadastrar livros em
 # uma biblioteca. Para cada livro, o programa deve armazenar informações como
 # título, autor, ano de publicação e número de páginas. O programa deve
 # permitir que o usuário cadastre pelo menos 5 livros e forneça a opção de
@@ -26,27 +26,28 @@ while True:
 
     if opcao == '1':
         titulo = input('Digite o título do livro que deseja cadastrar: ')
-        autor = input('Digite o nome do autor do livro: ')
+        autor = input('Digite o nome do autor do livro: ').upper()
         num_pag = int(input('Digite o numero de páginas do livro: '))
         livros_cadastrados[titulo] = {'Autor': autor,
                                       'Número de páginas': num_pag}
         os.system('cls')
         
-    elif opcao == '2':
+    elif opcao == '2':        
+        print('Livros cadastrados:')
+        for i, j in sorted(livros_cadastrados.items()):
+            print(f'{i}: {j}')
         if livros_cadastrados:
             mudar = input('Digite o título do livro deseja modificar: ')
             if mudar in livros_cadastrados:
+                os.system('cls')
                 print(f'Livro selecionado: {livros_cadastrados[mudar]}')
                 escolha = input('O que deseja trocar: ').capitalize()
                 if escolha in livros_cadastrados[mudar]:
                     novo = input('Digite o que deseja colocar no lugar: ')
                     livros_cadastrados[mudar][escolha] = novo
-                    if escolha == 'Número de páginas':
-                        int(novo)
                     print('Mudança feita.')
                     print('-'*70)
-                    print('Livros cadastrados: ')    
-                    print('.'*70)
+                    print('Livros cadastrados:\n')    
                     for livro, dados in livros_cadastrados.items():
                         print(f'Título: {livro}\nAutor: {dados["Autor"]}\n'
                         f'Número de páginas: {dados["Número de páginas"]}')
@@ -65,9 +66,9 @@ while True:
         for i, j in sorted(livros_cadastrados.items()):
             print(f'{i}: {j}')
         for dados in livros_cadastrados.values():
-            if dados['Número de páginas'] > 300:
+            if int(dados['Número de páginas']) > 300:
                 cont_pg += 1
-            if dados['Autor'] == 'J.K. Rowling':
+            if dados['Autor'] == 'J.K. ROWLING':
                 cont_autor += 1
         print(f'{cont_pg} Livros possuem mais de 300 páginas.')
         print(f'{cont_autor} Livros tem como autor J.K. Rowling.')

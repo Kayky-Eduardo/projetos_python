@@ -32,9 +32,9 @@ dicio = {
 print('Dicionário atual:\n')
 print('-'*70)
 for ferramenta, descricao in dicio.items():
-    print(f"- {ferramenta}: {descricao}")
-  
-print('-'*70)
+    print(f'Ferramenta: {ferramenta}\nDescrição: {descricao["Descrição"]}\n'
+          f'Material: {descricao["Material"]}')
+    print('-'*70)
 
 escolha = input('Escolha uma das ferramentas: ').capitalize()
 if escolha in dicio:

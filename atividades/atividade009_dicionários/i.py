@@ -1,11 +1,11 @@
-# Desenvolva um programa para gerenciar o estoque de uma loja. O programa
-# deve permitir que o usuário cadastre produtos, onde cada produto terá nome,
-# quantidade em estoque e preço unitário. O programa deve possibilitar a 
-# alteração da quantidade de um produto e a exclusão de um produto do estoque.
-# Após a inserção de pelo menos 5 produtos, o programa deve exibir todos
-# os produtos cadastrados, ordenados por nome, e gerar um relatório que 
-# informe o valor total do estoque, levando em consideração a quantidade e o
-# preço de cada produto.
+#Desenvolva um programa para gerenciar o estoque de uma loja. O programa
+#deve permitir que o usuário cadastre produtos, onde cada produto terá nome,
+#quantidade em estoque e preço unitário. O programa deve possibilitar a 
+#alteração da quantidade de um produto e a exclusão de um produto do estoque.
+#Após a inserção de pelo menos 5 produtos, o programa deve exibir todos
+#os produtos cadastrados, ordenados por nome, e gerar um relatório que 
+#informe o valor total do estoque, levando em consideração a quantidade e o
+#preço de cada produto.
 import os
 
 
@@ -40,6 +40,7 @@ while True:
             for i, j in produtos.items():
                 print(f'{i}: {j}')
             escolher = input('Qual produto deseja selecionar: ')
+            os.system('cls')
             if escolher in produtos:
                 print(f'Produto selecionado: {produtos[escolher]}')
                 mudar = input('Oque deseja mudar: ').capitalize()
@@ -51,6 +52,8 @@ while True:
                         produtos[escolher][mudar] = float(novo)
                 else:
                     print('Não encontrado.')
+            else:
+                print('Não encontrado.')
                     
     elif opcao == '3':
         excluir = input('Digite o nome do produto que deseja excluir: ')
@@ -58,12 +61,15 @@ while True:
             del produtos[excluir]
     
     elif opcao == '4':
-        os.system('cls')
-        for produto, valor in sorted(produtos.items()):
-            print(f'Nome do produto: {produto}\nQuantidade em estoque: '
-                  f'{valor["Quantidade em estoque"]}\nPreço unitário: '
-                  f'{valor["Preço unitário"]}')
-            print('='*70)
+        if produtos:
+            os.system('cls')
+            for produto, valor in sorted(produtos.items()):
+                print(f'Nome do produto: {produto}\nQuantidade em estoque: '
+                    f'{valor["Quantidade em estoque"]}\nPreço unitário: '
+                    f'{valor["Preço unitário"]}')
+                print('='*70)
+        else:
+            print('Estoque vázio.')
     
     elif opcao == '5':
         if len(produtos) >= 5:
