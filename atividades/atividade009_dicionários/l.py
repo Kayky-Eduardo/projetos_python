@@ -66,7 +66,7 @@ while True:
     elif opcao == '3':
         os.system('cls')
         if cinema:
-            for filme, dados in cinema.items():
+            for filme, dados in sorted(cinema.items()):
                 print(f'Filme: {filme}\nGênero: {dados["Gênero"]}')
                 print(f'Duração: {dados["Duração"]}')
                 print(f'Classificação: {dados["Classificação"]}')
