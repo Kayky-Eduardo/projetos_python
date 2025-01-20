@@ -6,6 +6,7 @@
 # gerar um relatório que informe quantas tarefas possuem prioridade alta e
 # quantas têm vencimento no próximo mês.
 import os
+from datetime import date
 
 
 os.system('cls')
@@ -69,26 +70,25 @@ while True:
         for nome, dados in tarefas_ordenadas:
             print(f'Tarefa: {nome}, Vencimento: {dados["Data de vencimento"]}, '
                   f'Prioridade: {dados["Prioridade"]}')
-            print(f'Tarefa: {nome}, Vencimento: {dados["Data de vencimento"]}, '
-                  f'Prioridade: {dados["Prioridade"]}')
-            
+            print('-'*70)
+
         for info_data in tarefas.values():
             dia, mes, ano = map(int, info_data['Data de vencimento'].split('/'))
-            mes_atual = 1
-            if mes_atual < 12:
-                proximo_m = mes_atual + 1
-            else:
-                proximo_m = 1
-            if mes_atual < 12:
-                proximo_a = ano
-            else:
-                proximo_a = ano + 1
+            data_atual = date.today()
+            mes_atual = data_atual.month
+            ano_atual = data_atual.year
 
         prioridade_alta = sum(1 for t in tarefas.values()
                               if t['Prioridade'] == 'Alta')
-        mes_vem = mes_atual + 1
-        vencimento =  sum(1 for t in tarefas.values() 
-        if int(t['Data de vencimento'].split('/')[1]) == mes_vem)
-
+        try:
+            vencimento = sum(
+            1 for t in tarefas.values()
+            if int(t['Data de vencimento'].split('/')[1]) == mes_atual + 1
+            and int(t['Data de vencimento'].split('/')[2]) == ano_atual)            
+            print(f'{vencimento} tarefas possuem vencimento no próximo mês')        
+        except:
+            print('Nenhuma data com vencimento no próximo mes.')
         print(f'{prioridade_alta} tarefas possuem prioridade alta')
-        print(f'{vencimento} tarefas possuem vencimento no próximo mês')
+        
+    elif opcao == '4':
+        break

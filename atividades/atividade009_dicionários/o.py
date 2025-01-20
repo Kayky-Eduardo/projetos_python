@@ -79,6 +79,9 @@ while True:
         
         for nome, dados in equipamentos.items():
             tipo = dados['Tipo']
+            if tipo not in equipamentos_por_tipo:
+                equipamentos_por_tipo[tipo] = []
+            equipamentos_por_tipo[tipo].append((nome, dados))
             if tipo == 'Cardio':
                 cardio += 1
             if dados['Estado'] == 'Necessitando reparos':
