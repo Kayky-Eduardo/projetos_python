@@ -84,7 +84,8 @@ while True:
                 print(f'Filme: {filme}\nGênero: {dados["Gênero"]}')
                 print(f'Duração: {dados["Duração"]}')
                 print(f'Classificação: {dados["Classificação"]}')
-                print('-'*70)
+                if len(cinema) > 1:
+                    print('-'*70)
 
     elif opcao == '4':
             os.system('cls')

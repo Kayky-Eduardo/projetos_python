@@ -13,9 +13,9 @@ class vendedor:
 
     def bateu_meta(self, meta):
         if self.vendas > meta:
-            print(self.nome, 'Não bateu meta')
+            print(self.nome, 'bateu meta')
         else:
-            print(self.nome, 'Bateu meta')
+            print(self.nome, 'não bateu meta')
 
 vendedor1 = vendedor('lira')
 vendedor1.vendeu(1000)
@@ -83,7 +83,7 @@ nome = contabancaria(valor_conta)
 
 if quer_depositar == 's':
     os.system('cls')
-    qnt_deposito = int(input('Quanto deseja depositar: '))
+    qnt_deposito = float(input('Quanto deseja depositar: '))
     nome.depositar(qnt_deposito)   
     print(f'Valor atual na conta {nome.consultar_saldo()}')
 else:
