@@ -171,16 +171,16 @@ while True:
             os.system('cls')
             qntd_deposito = float(input('Quantidade que deseja depositar: '))
             conta.depositar(qntd_deposito)
-            conta.consultar_saldo()
+            print(conta.consultar_saldo())
 
         elif escolher == '2':
             os.system('cls')
             qntd_sacar = float(input('Quantidade que deseja sacar: '))
             conta.sacar(qntd_sacar)
-            conta.consultar_saldo()
-        
+            print(conta.consultar_saldo())   
+
         elif escolher == '3':
-            conta.consultar_saldo()
+            print(conta.consultar_saldo())
 
         else:
             print('Opção invalida.')
