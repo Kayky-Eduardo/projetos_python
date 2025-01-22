@@ -5,10 +5,13 @@ os.system('cls')
 
 dicionario = {'Arthur':{'idade':30, 'genero': 'masculino'},
               'Kayky': {'idade':18, 'genero': 'masculino'},
-              'lorraine': {'idade': 56, 'genero': 'feminino'}}
+              'Lorraine': {'idade': 56, 'genero': 'feminino'}}
 
-def checagem(nome):
+def Checagem(nome):
     if nome in dicionario:
-        print(nome, dicionario[nome])
+        print(f'{nome}: {dicionario[nome]}')
+    else:
+        print(f'Este nome não está presente no dicionário.')
 
-checagem('Kayky')
+nome = input('Digite um nome: ').capitalize()
+Checagem(nome)

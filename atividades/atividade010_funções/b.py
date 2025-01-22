@@ -3,7 +3,7 @@ import os
 
 os.system('cls')
 
-def cadastrar_alunos(num_de_vezes):
+def Cadastrar_alunos(num_de_vezes):
     alunos = {}
     nome = input('Digite o nome do aluno: ')
     matricula = input(f'Matrícula: ')
@@ -23,4 +23,4 @@ def cadastrar_alunos(num_de_vezes):
     return alunos
 
 num_de_vezes = int(input("Quantos alunos deseja cadastrar? "))
-cadastrar_alunos(num_de_vezes)
+Cadastrar_alunos(num_de_vezes)

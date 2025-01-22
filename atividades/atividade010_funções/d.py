@@ -3,7 +3,7 @@ import os
 
 os.system('cls')
 
-def temperatura(temp, valor_temp):
+def Temperatura(temp, valor_temp):
     if valor_temp == 'fahrenheit':
         fahrenheit = temp
         celsius = (fahrenheit - 32) * 5/9
@@ -15,4 +15,4 @@ def temperatura(temp, valor_temp):
 
 valor_da_temperatura = float(input('Digite a temperatura: '))
 tipo_temp = input('O valor está em fahrenheit ou célsius: ')
-temperatura(valor_da_temperatura, tipo_temp)
+Temperatura(valor_da_temperatura, tipo_temp)
