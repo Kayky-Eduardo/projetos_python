@@ -3,14 +3,24 @@ import os
 
 os.system('cls')
 
-def cadastro(nome, matricula, data_de_nascimento):
-    dicionario[nome] = {'matricula':matricula,
-                        'data_de_nascimento':data_de_nascimento}
+def cadastrar_alunos(num_de_vezes):
+    alunos = {}
+    nome = input('Digite o nome do aluno: ')
+    matricula = input(f'Matrícula: ')
+    data_nascimento = input('Data de nascimento(dd/mm/aaaa): ')
+    
+    # Armazenando os dados do aluno
+    alunos[matricula] = {'nome': nome, 'data_nascimento': data_nascimento}
+    
+    # Loop
+    os.system('cls')
+    print("Alunos cadastrados:")
+    for aluno, dados in alunos.items():
+        print(f'Matrícula: {aluno}')
+        print(f'Nome: {dados["nome"]}')
+        print(f'Data de nascimento: {dados["data_nascimento"]}')
+    
+    return alunos
 
-
-
-
-dicionario = dict(nome= 'Arthur', matricula= 20, data_de_nascimento= 60.5)
-cadastro('Kayky', 102030, '10/10/2010')
-for i, j in dicionario.items():
-    print(f'{i} : {j}')
+num_de_vezes = int(input("Quantos alunos deseja cadastrar? "))
+cadastrar_alunos(num_de_vezes)
