@@ -50,6 +50,7 @@ os.system('cls')
 # pessoa.andar(100.9)
 
 class Contabancaria:
+    
     def __init__(self, saldo_atual):
       self.__saldo = saldo_atual
     
@@ -96,6 +97,7 @@ class Contabancaria:
 #         print(f'Valor atual na conta {nome.consultar_saldo()}')
 
 class ContaPoupanca(Contabancaria):
+
     def __init__(self, saldo_atual, taxa_juros):
         # Chamando o construtor da classe pai
         super().__init__(saldo_atual)
@@ -112,6 +114,7 @@ class ContaPoupanca(Contabancaria):
         print(f'Juros de R${juros:.2f} aplicados à conta.')
 
 class ContaCorrente(Contabancaria):
+
     def __init__(self, saldo_atual, limite_cheque_especial):
         # Chamando o construtor da classe pai
         super().__init__(saldo_atual)
@@ -141,8 +144,8 @@ print(f'Saldo da conta corrente: R${conta_corrente.consultar_saldo()}')
 conta_corrente.sacar(600)  # Tentando sacar mais do que o saldo disponível, mas dentro do limite do cheque especial
 print(f'Saldo após saque com cheque especial: R${conta_corrente.consultar_saldo()}')
 
+os.system('cls')
 while True:
-    os.system('cls')
     continuar = input('Deseja usar o programa(s/n): ').lower()
     if continuar == 's':
         nome = input('Digite seu nome: ')
@@ -180,7 +183,8 @@ while True:
             print(conta.consultar_saldo())   
 
         elif escolher == '3':
-            print(conta.consultar_saldo())
+            os.system('cls')
+            print(f'Valor atual na conta: {conta.consultar_saldo()}')
 
         else:
             print('Opção invalida.')
