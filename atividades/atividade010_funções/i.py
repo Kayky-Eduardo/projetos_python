@@ -56,7 +56,8 @@ def checagem(respostas):
             respostas_certas += 1
         else:
             print(f'Você errou! A capital de {estado} é {capital_correta}.')
-            print(f'Número total de respostas corretas: {respostas_certas}')
+            print(f'Número total de respostas corretas antes da resposta '
+                  f'errada: {respostas_certas}')
             return  # Interrompe a execução da função
     
     print(f'Número de respostas certas: {respostas_certas}')
