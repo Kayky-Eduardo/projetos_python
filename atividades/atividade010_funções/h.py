@@ -15,7 +15,6 @@ def media(nome, altura, peso):
     
     soma_altura = 0
     soma_peso = 0
-    
     for i in lista_altura:
         soma_altura += i
     for i in lista_peso:
@@ -29,7 +28,6 @@ def media(nome, altura, peso):
 while True:
     print('-'*70)
     comeco = input('Digite 1 para cadastrar e 0 para sair: ')
-    os.system('cls')
 
     if comeco == '1':
         nome = input('Digite seu nome: ')
