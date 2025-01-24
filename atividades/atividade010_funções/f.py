@@ -3,22 +3,36 @@ import os
 
 os.system('cls')
 
+# dicionario = {}
+# def Receber_listas(*listas):
+#     for lista in listas:
+#         dicionario[lista[0]] = {'peso': lista[1], 'idade': lista[2]}
 
-def Receber_lista(lista1, lista2):
+# nome = input('Digite um nome: ')
+# peso = float(input('Digite o peso: '))
+# idade = int(input('Digite sua idade: '))
+
+# lista1 = [nome, peso, idade]
+# lista2 = ['john', 40, 18]
+
+# Receber_listas(lista1, lista2)
+
+# print('Dicionário:')
+# for i, j in dicionario.items():
+#     print(f'{i}: {j}')
+    
+def Receber_listas(lista1, lista2):
     dicionario = {}
-    dicionario[lista1[0]] = {'peso': lista1[1], 'idade': lista1[2]}
-    dicionario[lista2[0]] = {'idade': lista2[1], 'peso': lista2[2]} 
-    print(f'\nDicionário:')
-    for i, j in dicionario.items():
-        print(f'{i}: {j}')
-
+    for i in range(len(lista1)):
+        dicionario[lista1[i]] = lista2[i]
+        
     return dicionario
 
-nome = input('Digite um nome: ')
-peso = float(input('Digite o peso: '))
-idade = int(input('Digite sua idade: '))
+lista1 = ['nome', 'peso', 'idade']
+lista2 = ['john', 40, 18]
 
-lista1 = [nome, peso, idade]
-lista2 = ['john', 40, 1.8]
+dicionario = Receber_listas(lista1, lista2)
 
-Receber_lista(lista1, lista2)
+print('Dicionário:')
+for i, j in dicionario.items():
+    print(f'{i}: {j}')

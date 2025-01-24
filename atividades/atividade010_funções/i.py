@@ -57,7 +57,6 @@ def checagem(respostas):
         else:
             print(f'Você errou! A capital de {estado} é {capital_correta}.')
             print(f'Número total de respostas corretas: {respostas_certas}')
-            print('O jogo terminou. Obrigado por jogar!')
             return  # Interrompe a execução da função
     
     print(f'Número de respostas certas: {respostas_certas}')
