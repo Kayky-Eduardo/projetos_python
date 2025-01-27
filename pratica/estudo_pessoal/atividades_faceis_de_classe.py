@@ -96,7 +96,42 @@ class Tamagushi:
         self.saude = saude
         self.idade = idade
 
-    def alterar_nome(self, novo_nome):
+    def Alterar_nome(self, novo_nome):
         self.nome = novo_nome
+        print(f'Nome alterado para {self.nome}')
+
+    def Mostrar_nome(self):
+        print(f'Nome: {self.nome}')
+
+    def Saude(self):
+        self.saude = 100
+        if self.fome < 40: 
+            print('Tamagushi está com fome, saúde abaixando!')
+            self.saude -= 10
+        else:
+            self.saude += 10
+            print('tamagushi está cheio, aumento de saúde!')
+
+    def Idade(self):
+        print(f'Tamagushi está envelhecendo, aumentando a fome.')
+        self.fome -= 10
+        self.idade += 1
+        print(f'Tamagushi tem {self.idade} anos.')
+
+    def Fome(self):
+        print(f'Tamagushi está ficando com fome!')
+        self.fome -= 10
+
+    def Humor(self):
+        if self.fome > 50 and self.saude >= 100:
+            self.humor = 'Feliz'
+        else:
+            self.humor = 'Triste'
+
+        print(f'Tamagushi está {self.humor}')
     
-    
+
+tama1 = Tamagushi('Tama-chan', 60, 100, 18)
+
+tama1.Idade()
+tama1.Humor()
