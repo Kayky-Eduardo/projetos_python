@@ -1,12 +1,12 @@
 import os
 
 from pacote.subpacote.mutiplicar import mutiplicar
-from pacote.divisão import dividir
+from pacote.divisao import dividir
 from pacote.soma import somar
 
 while True:
     os.system('cls')
-
+    
     a = input('Entre com o valor de A: ')
     b = input('Entre com o valor de B: ')
 

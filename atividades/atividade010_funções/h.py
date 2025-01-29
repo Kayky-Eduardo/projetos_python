@@ -3,6 +3,7 @@ import os
 
 os.system('cls')
 
+
 from funcoes_usadas import calculo_media_peso_e_altura
 
 while True:

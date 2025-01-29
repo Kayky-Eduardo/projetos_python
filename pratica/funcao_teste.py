@@ -1,0 +1,2 @@
+def pato():
+    print('Teste')
