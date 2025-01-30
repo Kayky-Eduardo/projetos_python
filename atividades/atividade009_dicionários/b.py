@@ -1,4 +1,5 @@
 import os
+from funcoes_utilizadas_dicionarios.modulo_atv_B import ordem_afabetica
 
 
 os.system('cls')
@@ -36,22 +37,4 @@ while True:
 
     elif resp == '3':
         os.system('cls')
-        ord_alf = sorted(dicio)
-        alf = 'abcdefghijklmnopqrstuvwxyz'
-
-        print(f'Dicionário atual: ')
-        for i, j in sorted(dicio.items()):
-            print(f'{i}: {j}', end= ' | ')
-        print()
-        # checando quantas vezes o primeiro caractere aparece
-
-        for char in alf:
-            num = 0
-            for palavra in ord_alf:
-                if char in palavra[0]:
-                    num += 1
-            if num == 0:
-                continue
-            else:
-                print(f'{num} cor(es) começam com a letra {char}')
-                print('-'*70)
+        ordem_afabetica(dicio)

@@ -9,58 +9,13 @@
 #alcoólico superior a 12% e quantos pertencem a safra superior ao ano de 2015
 #além de ordenar os vinhos por nome de forma crescente e exibi-los
 import os
+from funcoes_utilizadas_dicionarios import modulo_atv_D
 
 
 os.system('cls')
 
 dicio = {}
 
-
-def listagem():
-    if dicio:
-        for nome, info in dicio.items():
-            # breve explicação para caso eu me esqueça
-            # nome vai virar o dicionario q está dentro do dicionario e eu vou buscar os dados dele por info
-            # poderia fazer de um jeito mais curto igual no 2 mas assim fica mais bonito
-            print('-'*70)
-            print(f'{nome}:\nTipo: {info["Tipo"]}\n'
-                f'Teor alcoólico: {info["Teor alcoólico"]}%\n'
-                f'Safra: {info["Safra"]}')
-    else:
-        print('Lista vazia.')    
-        
-def mudar_dados():
-    if dicio:
-        listagem()
-
-        nome_vinho = input('\nQual vinho deseja modificar: ').capitalize()
-        os.system('cls')
-        if nome_vinho in dicio:
-            mudar = input('Digite oque deseja modificar: ').capitalize()
-            if mudar in dicio[nome_vinho]:
-                novo = input('Digite o que deseja colocar no lugar: ')
-                dicio[nome_vinho][mudar] = novo
-                print('Mudança feita.')
-            else:
-                print('Classificação não encontrada.')
-        else:
-            print('Vinho não encontrado.')
-    else:
-        print('Nada cadastrado atualmente.')
-
-def relatorio():
-    if dicio:
-        cont_teor = 0
-        cont_safra = 0
-        for dados in dicio.values():
-            if dados['Teor alcoólico'] > 12:
-                cont_teor += 1
-            if dados['Safra'] > 2015:
-                cont_safra += 1
-        print(f'Temos {cont_teor} vinhos com mais de 12% de '
-                'teor Alcoólico.')
-        print(f'Temos {cont_safra} vinhos com Safra superior a de 2015. ')
-        
 while True:
     print('-'*70)
     print('1. Adicionar 5 tipos de vinho.')
@@ -84,14 +39,16 @@ while True:
             os.system('cls')
 
     if opcao == '2':
-        mudar_dados()
+        os.system('cls')
+        modulo_atv_D.mudar_dados(dicio)
 
     elif opcao == '3':
         os.system('cls')
-        listagem()
+        modulo_atv_D.listagem(dicio)
 
     elif opcao == '4':
-        relatorio()
+        os.system('cls')
+        modulo_atv_D.relatorio(dicio)
 
     elif opcao == '5':
         print('Saindo...')
