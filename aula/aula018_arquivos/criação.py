@@ -17,7 +17,7 @@ pasta = 'arquivos_cvs/gravacao/'
 os.makedirs(pasta, exist_ok=True)
 
 # nome para o arquivo CSV para gravar as informações
-arquivo = 'alunas.csv'
+arquivo = 'arquivos_cvs/gravacao/alunas.csv'
 
 # Caminho completo do arquivo CSV
 caminho_arquivo = os.path.join(pasta, arquivo)
