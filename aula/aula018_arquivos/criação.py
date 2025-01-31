@@ -28,7 +28,7 @@ caminho_arquivo = os.path.join(pasta, arquivo)
 # as arquivo_csv: Atribui o objeto arquivo ao 'arquivo_csv' para ser usado dentro do bloco with.
 with open(arquivo, 'w', newline='') as arquivo_csv:
 
-    # campos = ['name', 'telefone', 'cidade]: Define a liasta de nomes de campos
+    # campos = ['name', 'telefone', 'cidade]: Define a lista de nomes de campos
     # (cabeçalhos das colunas do CSV)
     campos = ['nome', 'telefone', 'cidade']
 
