@@ -7,25 +7,15 @@
 # os equipamentos, ordenados por tipo, e gerar um relatório que informe quantos
 # equipamentos precisam de reparos e quantos estão na categoria "Cardio".
 import os
-from funcoes_utilizadas_dicionarios.classe_atividade_o import Equipamentos
 
-os.system('cls')
 
 equipamentos = {}
 
-while True:
-    print('-'*70)
-    print('1. Registrar equipamento.')
-    print('2. Alterar dado de um equipamento')
-    print('3. Relatório.')
-    print('4. Sair.')
-    print('-'*70)
+class Equipamentos:
+    def __init__(self):
+        pass
 
-    opcao = input('Escolha uma das opções: ')
-
-    if opcao == '1':
-        os.system('cls')
-        # Equipamentos.registrar()
+    def registrar():
         nome = input('Digite o nome do equipamento: ').capitalize()
         tipo = input('Insira o tipo do equipamento'
                      '(musculação, cardio, etc): ').capitalize()
@@ -47,9 +37,7 @@ while True:
                 print(f'Nome: {nome}, Quantidade: {dados["Quantidade"]}, '
                       f'Estado: {dados["Estado"]}')
 
-    elif opcao == '2':
-        os.system('cls')
-        # Equipamentos.alterar_dados()
+    def alterar_dados():
         if equipamentos:
             print('Equipamentos cadastrados:')
             for i, j in sorted(equipamentos.items()):
@@ -72,10 +60,9 @@ while True:
                 print('Item inexistente.')
         else:
             print('Lista de equipamentos vazia')
-            
-    elif opcao == '3':
+        
+    def relatorio():
         os.system('cls')
-        # Equipamentos.relatorio()
         equipamentos_por_tipo = {}
         precisa_reparo = 0
         cardio = 0
@@ -93,7 +80,3 @@ while True:
         print('Relatório:\n')
         print(f'Equipamentos necessitando de reparos: {precisa_reparo}')
         print(f'Equipamentos que estão na categoria "Cardio": {cardio}')
-        
-    elif opcao == '4':
-        print('Saindo...')
-        break

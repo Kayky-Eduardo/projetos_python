@@ -32,7 +32,7 @@ while True:
 
         for usuario in pessoas:
             if usuario['Nomes'] == procura_ad.lower():
-                print(f'Usuario encontrado: ',usuario)
+                print(f'Usuario encontrado: {usuario}')
                 encontrou = True
         if not encontrou:
             print(f'Pessoa {procura_ad} não encontrada.\n')

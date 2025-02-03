@@ -27,7 +27,6 @@ bola = Bola()
 # Métodos: Envelhercer, engordar, emagrecer, crescer. Obs: Por padrão,
 #  a cada ano que nossa pessoa envelhece,
 #  sendo a idade dela menor que 21 anos, ela deve crescer 0,5 cm.
-
 class Pessoa:
 
     def __init__(self, nome, idade, peso, altura):
@@ -88,7 +87,6 @@ conta1 = Contacorrente(1234, 'kayky')
 # este humor é uma combinação entre os atributos Fome e Saúde, ou seja, um campo calculado,
 # então não devemos criar um atributo para armazenar esta informação,
 # por que ela pode ser calculada a qualquer momento.
-
 class Tamagushi:
     def __init__(self, nome, fome, saude, idade):
         self.nome = nome
