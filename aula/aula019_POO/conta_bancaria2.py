@@ -1,7 +1,7 @@
 import os
 
 
-class Banco():
+class Banco:
     def __init__(self, nome='', agencia=0, conta=0, cpf=0,
                  conta_corrente=0, poupanca=0):
         self.nome = nome

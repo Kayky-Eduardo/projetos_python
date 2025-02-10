@@ -55,7 +55,7 @@ pessoa1 = Pessoa('kayky', 18, 70, 1.81)
 # A classe deve possuir os seguintes atributos: número da conta, nome do correntista e saldo.
 # Os métodos são os seguintes: alterarNome, depósito e saque; No construtor, saldo é opcional,
 # com valor default zero e os demais atributos são obrigatórios.
-class Contacorrente:
+class ContaCorrente:
 
     def __init__(self, numero_da_conta, nome):
         self.numero_da_conta = numero_da_conta
