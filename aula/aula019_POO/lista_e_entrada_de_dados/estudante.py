@@ -1,4 +1,3 @@
-
 class Estudante:
     def __init__(self, nome, idade):
         self.nome = nome

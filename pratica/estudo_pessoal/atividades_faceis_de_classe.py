@@ -7,7 +7,6 @@ os.system('cls')
 # Atributos: Cor, circunferência, material
 # Métodos: trocaCor e mostraCor
 class Bola:
-
     def __init__(self):
         self.cor = 'vermelha'
         self.circunferencia = 3.20
@@ -28,7 +27,6 @@ bola = Bola()
 #  a cada ano que nossa pessoa envelhece,
 #  sendo a idade dela menor que 21 anos, ela deve crescer 0,5 cm.
 class Pessoa:
-
     def __init__(self, nome, idade, peso, altura):
         self.nome = nome
         self.idade = idade
@@ -56,7 +54,6 @@ pessoa1 = Pessoa('kayky', 18, 70, 1.81)
 # Os métodos são os seguintes: alterarNome, depósito e saque; No construtor, saldo é opcional,
 # com valor default zero e os demais atributos são obrigatórios.
 class ContaCorrente:
-
     def __init__(self, numero_da_conta, nome):
         self.numero_da_conta = numero_da_conta
         self.nome = nome
@@ -77,7 +74,7 @@ class ContaCorrente:
     def consultar_saldo(self):
         print(f'Saldo atual: R${self.saldo:.2f}')
 
-conta1 = Contacorrente(1234, 'kayky')
+conta1 = ContaCorrente(1234, 'kayky')
 
 # Classe Bichinho Virtual:
 # Crie uma classe que modele um Tamagushi (Bichinho Eletrônico):

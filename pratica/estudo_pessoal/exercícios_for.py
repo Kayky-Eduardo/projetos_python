@@ -34,6 +34,7 @@ coisas_militares = [
     "Simulação de combate", "Tecnologia militar avançada", "Missões secretas", "Controle de fronteira", 
     "Forças militares aliadas", "Batalha naval", "Guerra com drones", "Explosivos militares", "Monitoramento de fronteira"
 ]
+
 coisas_militares_minusculas = [item.lower() for item in coisas_militares]
 escolhida = random.choice(coisas_militares_minusculas)
 tentativas_c = ['_'] * len(escolhida)

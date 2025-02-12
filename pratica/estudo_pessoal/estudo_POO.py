@@ -3,19 +3,19 @@ import os
 
 os.system('cls')
 
-# class vendedor:
-#     def __init__(self, nome):
-#         self.nome = nome
-#         self.vendas = 0
+class vendedor:
+    def __init__(self, nome):
+        self.nome = nome
+        self.vendas = 0
 
-#     def vendeu(self, vendas):
-#         self.vendas = vendas
+    def vendeu(self, vendas):
+        self.vendas = vendas
 
-#     def bateu_meta(self, meta):
-#         if self.vendas > meta:
-#             print(self.nome, 'bateu meta')
-#         else:
-#             print(self.nome, 'não bateu meta')
+    def bateu_meta(self, meta):
+        if self.vendas > meta:
+            print(self.nome, 'bateu meta')
+        else:
+            print(self.nome, 'não bateu meta')
 
 # vendedor1 = vendedor('lira')
 # vendedor1.vendeu(1000)
@@ -26,31 +26,7 @@ os.system('cls')
 # vendedor2.bateu_meta(600)
 # print()
 
-# class Pessoa:
-#   def __init__(self, nome: str, idade: int, altura: float):
-#     self.nome = nome
-#     self.idade = idade
-#     self.altura = altura
-
-#   def dizer_ola(self):
-#     print(f'Olá, meu nome é {self.nome}. Tenho {self.idade} '
-#           f'anos e minha altura é {self.altura}m.')
-
-#   def cozinhar(self, receita: str):
-#     print(f'Estou cozinhando um(a): {receita}')
-
-#   def andar(self, distancia: float):
-#     print(f'Saí para andar. Volto quando completar {distancia} metros')
-
-# # Desta forma tem que ser na ordem escrita.
-# pessoa = Pessoa('Luis', 18, 1.80) 
-# # Na forma a seguir não importa a ordem
-# # pessoa = Pessoa(nome='Luis', idade=18, altura=1.80)
-# pessoa.dizer_ola()
-# pessoa.andar(100.9)
-
 class Contabancaria:
-    
     def __init__(self, saldo_atual):
       self.__saldo = saldo_atual
     
@@ -97,7 +73,6 @@ class Contabancaria:
 #         print(f'Valor atual na conta {nome.consultar_saldo()}')
 
 class ContaPoupanca(Contabancaria):
-
     def __init__(self, saldo_atual, taxa_juros):
         # Chamando o construtor da classe pai
         super().__init__(saldo_atual)
@@ -114,7 +89,6 @@ class ContaPoupanca(Contabancaria):
         print(f'Juros de R${juros:.2f} aplicados à conta.')
 
 class ContaCorrente(Contabancaria):
-
     def __init__(self, saldo_atual, limite_cheque_especial):
         # Chamando o construtor da classe pai
         super().__init__(saldo_atual)
