@@ -1,6 +1,6 @@
 import os
 
-from funcoes_usadas.matematica import OperacaoMatematica
+from modulo.matematica import OperacaoMatematica
 
 os.system('cls')
 
