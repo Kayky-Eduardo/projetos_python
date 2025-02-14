@@ -21,10 +21,14 @@ class Calcular:
         return self._c
 
     # Setters
-    def set_valores(self, a, b, c):
-        self._a = a
-        self._b = b
-        self._c = c
+    def set_a(self, valor):
+        self._a = valor
+    
+    def set_b(self, valor):
+        self._b = valor
+    
+    def set_c(self, valor):
+        self._c = valor
         
     def calcular_soma_mutiplicacao(self):
         soma = self._a + self._b + self._c
