@@ -21,19 +21,16 @@ class Calcular:
         return self._c
 
     # Setters
-    def set_a(self, value):
-        self._a = value
-    
-    def set_b(self, value):
-        self._b = value
-    
-    def set_c(self, value):
-        self._c = value
-    
+    def set_valores(self, a, b, c):
+        self._a = a
+        self._b = b
+        self._c = c
+        
     def calcular_soma_mutiplicacao(self):
         soma = self._a + self._b + self._c
         mutiplicacao = (self._a * self._b * self._c)
         return soma, mutiplicacao
+
 
 valor1 = int(input('Digite o primeiro valor: '))
 valor2 = int(input('Digite o segundo valor: '))

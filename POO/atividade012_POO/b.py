@@ -19,7 +19,7 @@ class Idade:
         # Objeto de datetime
         nascimento = datetime.strptime(data_de_nascimento, '%d/%m/%Y')
 
-        self._idade = hoje.year - nascimento.year \
+        self._idade = hoje.year - nascimento.year - \
         ((hoje.month, hoje.day) < (nascimento.month, nascimento.day))
 
     def get_idade(self):
@@ -29,4 +29,4 @@ data_de_nascimento = input('Digite sua data de nascimento(dd/mm/yyyy): ')
 pessoa1 = Idade(data_de_nascimento)
 idade = pessoa1.get_idade()
 
-print(f'Voce possui {pessoa1} anos')
+print(f'Voce possui {pessoa1.get_idade()} anos')
