@@ -19,9 +19,9 @@ class Tabuada:
             mult = 0
             mult = self._num * i
             print(f'{self._num} * {i} = {mult}')
-
+        return
+    
 entrada = int(input('Digite um número para tabuada: '))
-
 objeto = Tabuada(entrada)
 
 objeto.fazer_tabuada()
