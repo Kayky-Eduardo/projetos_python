@@ -32,4 +32,6 @@ retangulo = Retangulo(base, altura)
 
 perimetro = retangulo.calcular_perimetro()
 
+print(f'base: {retangulo.get_base()}')
+print(f'Altura: {retangulo.get_altura()}')
 print(f'Perímetro: {perimetro}')
