@@ -184,7 +184,7 @@ while True:
 
         if escolha_veiculo == '1':
             os.system('cls')
-            if Veiculo.veiculos['Carro']:
+            if carro.veiculos['Carro']:
                 for veiculo, dados in carro.veiculos['Carro'].items():
                     print('-'*70)
                     print(f'Veículo: {veiculo}\nDados: {dados}')
