@@ -53,6 +53,9 @@ class Veiculo:
 
 
 class Carro(Veiculo):
+    def __init__(self, marca, modelo, cor, ano):
+        super().__init__(marca, modelo, cor, ano)
+
     def tipagem_combustivel(self, combustivel):
         self.combustivel = combustivel
 
@@ -60,8 +63,6 @@ class Carro(Veiculo):
         self._carro.append(info)
     
 class Moto(Veiculo):
-    # def tipagem_moto(self, tipo_moto):
-    #     self.tipo_moto = tipo_moto
     def tipagem_moto(self, tipo_moto):
         self.tipo_moto = tipo_moto
 
@@ -76,6 +77,7 @@ class Caminhao(Veiculo):
     def adicionar_na_lista(self, info):
         self._caminhao.append(info)
     
+veiculos = {'Carro': {}, 'Moto': {}, 'Caminhão': {}}
 while True:
     print('Dados para cadastro: ')
     marca = input('Digite a marca do veículo: ')
