@@ -15,9 +15,16 @@ class Veiculo:
         self._modelo = modelo
         self._cor = cor
         self._ano = ano
-        self._carro = []
-        self._moto = []
-        self._caminhao = []
+        self.veiculos = {'Carro': {}, 'Moto': {}, 'Caminhão': {}}
+
+    def exibir_info(self):
+        pass
+
+    def receber_dados(self):
+        pass
+
+    def cadastrar(self):
+        pass
 
     @property
     def marca(self):
@@ -53,69 +60,164 @@ class Veiculo:
 
 
 class Carro(Veiculo):
-    def __init__(self, marca, modelo, cor, ano):
+    def __init__(self, marca, modelo, cor, ano, combustivel):
         super().__init__(marca, modelo, cor, ano)
-
-    def tipagem_combustivel(self, combustivel):
-        self.combustivel = combustivel
-
-    def adicionar_na_lista(self, info):
-        self._carro.append(info)
+        self._combustivel = combustivel
+        
+    def receber_dados():
+        print('Dados para cadastro: ')
+        marca = input('Digite a marca do veículo: ')
+        modelo = input('Digte o modelo do veículo: ')
+        cor = input('Digite a cor do veículo: ')
+        ano = int(input(f'Digite o ano de lançamento do veículo: '))
+        combustivel = input('Digite o combustivel sendo utilizado: ')
+        
+        return marca, modelo, cor, ano, combustivel
     
+    def adicionar_no_dicionario(self):
+        marca, modelo, cor, ano, combustivel = Carro.receber_dados()
+        carro = Carro(marca, modelo, cor, ano, combustivel)
+        self.veiculos['Carro'][marca] = {
+            'Modelo': modelo,
+            'Cor': cor,
+            'Ano': ano,
+            'Combustivel': combustivel
+        }
+        return carro
+
+
+    @property
+    def combustivel(self):
+        return self._combustivel
+    
+    @combustivel.setter
+    def combustivel(self, combustivel):
+        self._combustivel = combustivel
+
+
 class Moto(Veiculo):
-    def tipagem_moto(self, tipo_moto):
-        self.tipo_moto = tipo_moto
+    def __init__(self, marca, modelo, cor, ano, tipo):
+        super().__init__(marca, modelo, cor, ano)
+        self.tipo = tipo
 
-    def adicionar_na_lista(self, info):
-        self._moto.append(info)
-       
-class Caminhao(Veiculo):   
-
-    def carga_maxima(self, max_carga):
-            self.max_carga = max_carga
-
-    def adicionar_na_lista(self, info):
-        self._caminhao.append(info)
+    @property
+    def tipo(self):
+        return self.tipo
     
-veiculos = {'Carro': {}, 'Moto': {}, 'Caminhão': {}}
+    @tipo.setter
+    def tipo(self, novo_tipo):
+        self.tipo = novo_tipo
+
+    def cadastrar():
+        print('Dados para cadastro: ')
+        marca = input('Digite a marca do veículo: ')
+        modelo = input('Digte o modelo do veículo: ')
+        cor = input('Digite a cor do veículo: ')
+        ano = int(input(f'Digite o ano de lançamento do veículo: '))
+        tipo_moto = input('Digite o combustivel sendo utilizado: ')
+        moto = Moto(marca, modelo, cor, ano, tipo_moto)
+        return marca, modelo, cor, ano, tipo_moto, moto
+             
+class Caminhao(Veiculo):   
+    def __init__(self, marca, modelo, cor, ano, carga):
+        super().__init__(marca, modelo, cor, ano)
+        self._carga = carga
+
+    @property
+    def carga(self):
+        return self._carga
+    
+    @carga.setter
+    def carga(self, nova_carga):
+        self._carga = nova_carga
+
+    def cadastrar():
+        print('Dados para cadastro: ')
+        marca = input('Digite a marca do veículo: ')
+        modelo = input('Digte o modelo do veículo: ')
+        cor = input('Digite a cor do veículo: ')
+        ano = int(input(f'Digite o ano de lançamento do veículo: '))
+        carga_maxima = input('Digite o combustivel sendo utilizado: ')
+        moto = Moto(marca, modelo, cor, ano, carga_maxima)
+        return marca, modelo, cor, ano, carga_maxima, moto
+             
+
+os.system('cls')
+
 while True:
-    print('Dados para cadastro: ')
-    marca = input('Digite a marca do veículo: ')
-    modelo = input('Digte o modelo do veículo: ')
-    cor = input('Digite a cor do veículo: ')
-    ano = int(input(f'Digite o ano de lançamento do veículo: '))
-
-    os.system('cls')
-    print('Escolha uma opção:')
-    escolha = input('0. Sair\n1. Carro\n2. Moto\n3. Caminhão\nEscolha: ')
+    print('1. Carro\n2. Moto\n3. Caminhão\n4. Exibir\n5. Trocar dados\n'
+          '6. sair')
+    escolha = input('Escolha uma opção: ')
     os.system('cls')
 
-    if escolha == '0':
+    if escolha == '6':
         break
     
     elif escolha == '1':
-        carro = Carro(marca, modelo, cor, ano)
-        tipo_combustivel = input('Digite o tipo do combustivel: ')
-        
-        carro.tipagem_combustivel(tipo_combustivel)
-        print('Carro cadastrado')
+        carro = Carro.adicionar_no_dicionario()
 
     elif escolha == '2':
-        moto = Moto(marca, modelo, cor, ano)
-        tipo_moto = input('Digite o tipo de moto(esportiva, custom): ')
-        moto.tipagem_moto(tipo_moto)
+        marca, modelo, cor, ano, tipo_moto, moto = Moto.cadastrar()
+        moto = Moto(marca, modelo, cor, ano, tipo_moto)
+        moto.veiculos['Moto'][marca] = {
+            'Modelo': modelo,
+            'Cor': cor,
+            'Ano': ano,
+            'Tipo': tipo_moto
+            }
         print('Moto cadastrada')
     
     elif escolha == '3':
-        caminhao = Caminhao(marca, modelo, cor, ano, carga)
-        carga_maxima = int(input('Digite a carga máxima(kg) '
-                                 'que o caminhão aguenta'))
-        carga = caminhao.carga_maxima(carga_maxima)
+        marca, modelo, cor, ano, carga_maxima, caminhao  = Moto.cadastrar()
+        caminhao.veiculos['Caminhão'][marca] = {
+            'Modelo': modelo,
+            'Cor': cor,
+            'Ano': ano,
+            'Carga_maxima': carga_maxima
+            }
         print('Caminhão cadastrado')
     
+    elif escolha == '4':
+        print('Tipos de veículo: ')
+        print('1. Carro\n2. Moto\n3. Caminhão')
+        escolha_veiculo = input('Escolha uma das opções: ')
+
+        if escolha_veiculo == '1':
+            os.system('cls')
+            if carro.veiculos['Carro']:
+                for veiculo, dados in carro.veiculos['Carro'].items():
+                    print('-'*70)
+                    print(f'Veículo: {veiculo}\nDados: {dados}')
+                        # f'modelo: {dados["modelo"]}\n cor: {dados["cor"]}\n'
+                        # f'Ano de lançamento: {dados["ano"]}'
+                        # f'\nCombustível: {dados["Combustível"]}')
+            else:
+                print('Não possuimos nada cadastrados.')
+        
+        elif escolha_veiculo == '2':
+            if moto.veiculos['Moto']:
+                for veiculo, dados in moto.veiculos['Moto'].items():
+                    print('-'*70)
+                    print(f'Veículo: {veiculo}\nmarca: {dados["Marca"]}\n'
+                        f'modelo: {dados["modelo"]}\n cor: {dados["cor"]}\n'
+                        f'Ano de lançamento: {dados["ano"]}'
+                        f'\nTipo: {dados["Tipo"]}')
+            else:
+                print('Não possuimos nada cadastrados.')
+
+        elif escolha_veiculo == '3':
+            if caminhao.veiculos['Caminhão']:
+                for veiculo, dados in caminhao.veiculos['Caminhão'].items():
+                    print('-'*70)
+                    print(f'Veículo: {veiculo}\nmarca: {dados["Marca"]}\n'
+                        f'modelo: {dados["modelo"]}\n cor: {dados["cor"]}\n'
+                        f'Ano de lançamento: {dados["ano"]}'
+                        f'\nCarga máxima: {dados["Carga_maxima"]}')
+            else:
+                print('Não tem nada cadastrados.')
+    
     else:
-        print('Opção inválida')
-        print('Tente novamente!')
+        print('Opção inválida, tente novamente!')
 
 
 
