@@ -17,7 +17,6 @@ class Veiculo:
 # Eles pertencem à classe em si e não a objetos individuais.
 # Atributos de instância são específicos de cada objeto criado a partir da classe.
 # Cada instância tem sua própria cópia desses atributos.
-
     veiculos = {'Carro': {}, 'Moto': {}, 'Caminhão': {}}
     
     def __init__(self, marca, modelo, cor, ano):
@@ -214,9 +213,6 @@ while True:
 
     else:
         print('Opção inválida, tente novamente!')
-
-
-
 
     # PARA LEMBRAR
     # PLANEJO FAZER UMA DIVISÃO POR LISTA OU DICIONARIO(no caso do carro, vai fazer checagem por combustivel,
