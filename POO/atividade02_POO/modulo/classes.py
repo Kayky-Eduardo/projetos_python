@@ -77,13 +77,15 @@ class Carro(Veiculo):
         """Metódo para cadastrar carros no dicionário veiculos
         ultilizando a classe veiculo"""
         try:
+            nome = input('Digite o nome: ').capitalize()
             marca = input('Marca do carro: ').capitalize()
             modelo = input('Modelo do carro: ').capitalize()
             cor = input('Cor do carro: ').capitalize()
-            ano = int(input('Ano do carro: '))
+            ano = int(input('Ano de lançamento do carro: '))
             combustivel = input('combustivel: ').capitalize()
 
-            self.veiculos['Carro'][modelo] = {
+            self.veiculos['Carro'][nome] = {
+                'Modelo': modelo,
                 'Marca': marca,
                 'Cor': cor,
                 'Ano': ano,
@@ -99,8 +101,9 @@ class Carro(Veiculo):
         exibindo os dados do carro com loop for"""
         os.system('cls')
         if Veiculo.veiculos['Carro']:
-            for modelo, dados in Veiculo.veiculos['Carro'].items():
-                print(f'{modelo}:\nMarca: {dados["Marca"]}\n'
+            for nome, dados in Veiculo.veiculos['Carro'].items():
+                print(f'{nome}:\nModelo: {dados["Modelo"]}\n'
+                    f'Marca: {dados["Marca"]}\n'
                     f'Cor: {dados["Cor"]}\nAno: {dados["Ano"]}\n'
                     f'Combustível: {dados["Combustível"]}')
                 print('-'*70)
@@ -116,8 +119,7 @@ class Carro(Veiculo):
         Carro.exibir_dados()
         dicio_carro = Veiculo.veiculos['Carro']
         if dicio_carro:
-            trocar = input('Escolha qual modelo de '
-                           'carro deseja escolher: ').capitalize()
+            trocar = input('Qual o nome do dono do carro: ').capitalize()
             if trocar in dicio_carro:
                 opcao = input('Qual dado deseja alterar: ').capitalize()
                 for i in dicio_carro[trocar]:
@@ -130,26 +132,29 @@ class Carro(Veiculo):
             print(f'Cadastros vazio.')
 
 class Moto(Veiculo):
-    def __init__(self, marca, modelo, cor, ano, combustivel):
+    def __init__(self, marca, modelo, cor, ano, tipo_moto):
         super().__init__(marca, modelo, cor, ano)
-        self._combustivel = combustivel
+        self._tipo_moto = tipo_moto
 
     @property
-    def combustivel(self):
-        return self._combustivel
+    def tipo_moto(self):
+        return self._tipo_moto
     
-    @combustivel.setter
-    def combustivel(self, novo_combustivel):
-        self._combustivel = novo_combustivel
+    @tipo_moto.setter
+    def tipo_mot(self, tipo_moto):
+        self._tipo_moto = tipo_moto
 
     def cadastrar(self):
         try: 
+            nome = input('Digite o nome: ').capitalize()
             marca = input('Marca da moto: ').capitalize()
             modelo = input('Modelo da moto: ').capitalize()
             cor = input('Cor da moto: ').capitalize()
-            ano = int(input('Ano da moto: '))
-            tipo_moto = input('tipo de moto (Esportiva, Custom, etc.): ').capitalize()
-            self.veiculos['Moto'][modelo] = {
+            ano = int(input('Ano de lançamento da moto: '))
+            tipo_moto = input('tipo de moto (Esportiva, '
+                              'Custom, etc.): ').capitalize()
+            self.veiculos['Moto'][nome] = {
+                'Modelo': modelo,
                 'Marca': marca,
                 'Cor': cor,
                 'Ano': ano,
@@ -163,8 +168,9 @@ class Moto(Veiculo):
     def exibir_dados():
         os.system('cls')
         if Veiculo.veiculos['Moto']:
-            for modelo, dados in Veiculo.veiculos['Moto'].items():
-                print(f'{modelo}:\nMarca: {dados["Marca"]}\n'
+            for nome, dados in Veiculo.veiculos['Moto'].items():
+                print(f'{nome}:\nModelo: {dados["Modelo"]}\n'
+                    f'Marca: {dados["Marca"]}\n'
                     f'Cor: {dados["Cor"]}\nAno: {dados["Ano"]}\n'
                     f'Tipo moto: {dados["Tipo"]}')
                 print('-'*70)
@@ -177,8 +183,7 @@ class Moto(Veiculo):
         Moto.exibir_dados()
         dicio_moto = Veiculo.veiculos['Moto']
         if dicio_moto:
-            trocar = input('Escolha qual modelo de moto '
-                           'deseja escolher: ').capitalize()
+            trocar = input('Qual o nome do dono da moto: ').capitalize()
             if trocar in dicio_moto:
                 opcao = input('Qual dado deseja alterar: ').capitalize()
                 for i in dicio_moto[trocar]:
@@ -207,13 +212,15 @@ class Caminhao(Veiculo):
 
     def cadastrar(self):
         try:
+            nome = input('Digite seu nome: ').capitalize()
             marca = input('Marca do caminhão: ').capitalize()
             modelo = input('Modelo do caminhão: ').capitalize()
             cor = input('Cor do caminhão: ').capitalize()
-            ano = int(input('Ano do caminhão: '))
+            ano = int(input('Ano de lançamento do caminhão: '))
             carga_maxima = input('Capacidade de carga(kg): ').capitalize()
             
-            self.veiculos['Caminhão'][modelo] = {
+            self.veiculos['Caminhão'][nome] = {
+                'Modelo': modelo,
                 'Marca': marca,
                 'Cor': cor,
                 'Ano': ano,
@@ -227,8 +234,9 @@ class Caminhao(Veiculo):
     def exibir_dados():
         os.system('cls')
         if Veiculo.veiculos['Caminhão']:
-            for modelo, dados in Veiculo.veiculos['Caminhão'].items():
-                print(f'{modelo}:\nMarca: {dados["Marca"]}\n'
+            for nome, dados in Veiculo.veiculos['Caminhão'].items():
+                print(f'{nome}:\nModelo: {dados["Modelo"]}\n'
+                    f'Marca: {dados["Marca"]}\n'
                     f'Cor: {dados["Cor"]}\nAno: {dados["Ano"]}\n'
                     f'Carga máxima: {dados["Carga máxima"]}')
                 print('-'*70)
@@ -241,8 +249,7 @@ class Caminhao(Veiculo):
         Caminhao.exibir_dados()
         dicio_caminhao = Veiculo.veiculos['Caminhão']
         if dicio_caminhao:
-            trocar = input('Escolha qual modelo de caminhão deseja '
-                           'escolher: ').capitalize()
+            trocar = input('Qual o nome do dono do caminhão: ').capitalize()
             if trocar in dicio_caminhao:
                 opcao = input('Qual dado deseja alterar: ').capitalize()
                 for i in dicio_caminhao[trocar]:

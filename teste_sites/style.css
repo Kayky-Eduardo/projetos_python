@@ -1,0 +1,157 @@
+/* Definindo o estilo geral da página */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #000000;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Título principal */
+h1 {
+    color: red;
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 30px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Imagem com borda e arredondamento */
+img {
+    display: block;
+    margin: 20px auto;
+    border-radius: 15px;
+    border: 5px solid #333;
+}
+
+/* Subtítulo */
+h2 {
+    text-align: center;
+    font-size: 2em;
+    color: #444;
+    margin-top: 40px;
+}
+
+/* Parágrafo de texto */
+p {
+    font-size: 1.1em;
+    line-height: 1.6;
+    text-align: center;
+    margin: 20px 30px;
+}
+
+/* Estilos para o conteúdo em destaque */
+u {
+    color: darkblue;
+}
+
+b {
+    color: darkgreen;
+}
+
+strong {
+    color: darkorange;
+}
+
+em {
+    font-style: italic;
+    color: purple;
+}
+
+mark {
+    background-color: yellow;
+    color: black;
+}
+
+small {
+    font-size: 0.8em;
+    color: grey;
+}
+
+del {
+    color: red;
+    text-decoration: line-through;
+}
+
+ins {
+    color: green;
+    text-decoration: underline;
+}
+
+sub {
+    font-size: 0.8em;
+    vertical-align: sub;
+}
+
+sup {
+    font-size: 0.8em;
+    vertical-align: super;
+}
+
+/* Lista ordenada */
+ol {
+    padding-left: 40px;
+    margin-top: 30px;
+}
+
+/* Lista de definição */
+dl {
+    font-size: 1.1em;
+    margin: 20px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+dt {
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+dd {
+    margin-left: 20px;
+    color: #555;
+}
+
+/* Links */
+a {
+    color: #0066cc;
+    text-decoration: none;
+    font-size: 1.1em;
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #005bb5;
+}
+
+/* Imagem responsiva */
+picture {
+    text-align: center;
+    margin-top: 20px;
+}
+
+source {
+    display: block;
+    margin: 0 auto;
+}
+
+/* Personalizando a aparência do endereço */
+address {
+    font-style: italic;
+    color: #777;
+}
+
+/* Definindo uma borda para cada seção de conteúdo */
+section {
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
