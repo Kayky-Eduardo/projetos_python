@@ -76,34 +76,38 @@ class Carro(Veiculo):
     def cadastrar(self):
         """Metódo para cadastrar carros no dicionário veiculos
         ultilizando a classe veiculo"""
-        marca = input('Marca do carro: ').capitalize()
-        modelo = input('Modelo do carro: ').capitalize()
-        cor = input('Cor do carro: ').capitalize()
-        ano = int(input('Ano do carro: '))
-        combustivel = input('combustivel: ').capitalize()
+        try:
+            marca = input('Marca do carro: ').capitalize()
+            modelo = input('Modelo do carro: ').capitalize()
+            cor = input('Cor do carro: ').capitalize()
+            ano = int(input('Ano do carro: '))
+            combustivel = input('combustivel: ').capitalize()
 
-        Veiculo.veiculos['Carro'][modelo] = {
-            'Marca': marca,
-            'Cor': cor,
-            'Ano': ano,
-            'Combustível': combustivel
-        }
-        os.system('cls')
-        print('Carro cadastrado com sucesso!')
-    
+            self.veiculos['Carro'][modelo] = {
+                'Marca': marca,
+                'Cor': cor,
+                'Ano': ano,
+                'Combustível': combustivel
+            }
+            os.system('cls')
+            print('Carro cadastrado com sucesso!')
+        except ValueError:
+            print(f'Ano foi digitado de forma incorreta!')
+            
     def exibir_dados():
         """Fazendo checagem no dicionario e
         exibindo os dados do carro com loop for"""
         os.system('cls')
         if Veiculo.veiculos['Carro']:
             for modelo, dados in Veiculo.veiculos['Carro'].items():
-                print(f'Modelo: {modelo}\nMarca: {dados["Marca"]}\n'
+                print(f'{modelo}:\nMarca: {dados["Marca"]}\n'
                     f'Cor: {dados["Cor"]}\nAno: {dados["Ano"]}\n'
                     f'Combustível: {dados["Combustível"]}')
                 print('-'*70)
 
         else:
             print('Nenhum carro cadastrado.')
+            print('-'*70)
 
     def trocar_dados():
         """Checando a presença da chave no dicionario
@@ -112,7 +116,8 @@ class Carro(Veiculo):
         Carro.exibir_dados()
         dicio_carro = Veiculo.veiculos['Carro']
         if dicio_carro:
-            trocar = input('Escolha qual carro deseja escolher: ').capitalize()
+            trocar = input('Escolha qual modelo de '
+                           'carro deseja escolher: ').capitalize()
             if trocar in dicio_carro:
                 opcao = input('Qual dado deseja alterar: ').capitalize()
                 for i in dicio_carro[trocar]:
@@ -137,26 +142,29 @@ class Moto(Veiculo):
     def combustivel(self, novo_combustivel):
         self._combustivel = novo_combustivel
 
-    def cadastrar(self):  
-        marca = input('Marca da moto: ').capitalize()
-        modelo = input('Modelo da moto: ').capitalize()
-        cor = input('Cor da moto: ').capitalize()
-        ano = int(input('Ano da moto: '))
-        tipo_moto = input('tipo de moto (Esportiva, Custom, etc.): ').capitalize()
-        Veiculo.veiculos['Moto'][modelo] = {
-            'Marca': marca,
-            'Cor': cor,
-            'Ano': ano,
-            'Tipo': tipo_moto
-        }
-        os.system('cls')
-        print('Moto cadastrada com sucesso!')
-
+    def cadastrar(self):
+        try: 
+            marca = input('Marca da moto: ').capitalize()
+            modelo = input('Modelo da moto: ').capitalize()
+            cor = input('Cor da moto: ').capitalize()
+            ano = int(input('Ano da moto: '))
+            tipo_moto = input('tipo de moto (Esportiva, Custom, etc.): ').capitalize()
+            self.veiculos['Moto'][modelo] = {
+                'Marca': marca,
+                'Cor': cor,
+                'Ano': ano,
+                'Tipo': tipo_moto
+            }
+            os.system('cls')
+            print('Moto cadastrada com sucesso!')
+        except ValueError:
+            print(f'Ano foi digitado de forma incorreta!')
+            
     def exibir_dados():
         os.system('cls')
         if Veiculo.veiculos['Moto']:
             for modelo, dados in Veiculo.veiculos['Moto'].items():
-                print(f'Modelo: {modelo}\nMarca: {dados["Marca"]}\n'
+                print(f'{modelo}:\nMarca: {dados["Marca"]}\n'
                     f'Cor: {dados["Cor"]}\nAno: {dados["Ano"]}\n'
                     f'Tipo moto: {dados["Tipo"]}')
                 print('-'*70)
@@ -169,7 +177,8 @@ class Moto(Veiculo):
         Moto.exibir_dados()
         dicio_moto = Veiculo.veiculos['Moto']
         if dicio_moto:
-            trocar = input('Escolha qual moto deseja escolher: ').capitalize()
+            trocar = input('Escolha qual modelo de moto '
+                           'deseja escolher: ').capitalize()
             if trocar in dicio_moto:
                 opcao = input('Qual dado deseja alterar: ').capitalize()
                 for i in dicio_moto[trocar]:
@@ -197,26 +206,29 @@ class Caminhao(Veiculo):
         self._carga = nova_carga
 
     def cadastrar(self):
-        marca = input('Marca do caminhão: ').capitalize()
-        modelo = input('Modelo do caminhão: ').capitalize()
-        cor = input('Cor do caminhão: ').capitalize()
-        ano = int(input('Ano do caminhão: '))
-        carga_maxima = input('Capacidade de carga(kg): ').capitalize()
-        
-        Veiculo.veiculos['Caminhão'][modelo] = {
-            'Marca': marca,
-            'Cor': cor,
-            'Ano': ano,
-            'Carga máxima': carga_maxima
-        }
-        os.system('cls')
-        print('Caminhão cadastrado com sucesso!')
-
+        try:
+            marca = input('Marca do caminhão: ').capitalize()
+            modelo = input('Modelo do caminhão: ').capitalize()
+            cor = input('Cor do caminhão: ').capitalize()
+            ano = int(input('Ano do caminhão: '))
+            carga_maxima = input('Capacidade de carga(kg): ').capitalize()
+            
+            self.veiculos['Caminhão'][modelo] = {
+                'Marca': marca,
+                'Cor': cor,
+                'Ano': ano,
+                'Carga máxima': carga_maxima
+            }
+            os.system('cls')
+            print('Caminhão cadastrado com sucesso!')
+        except ValueError:
+            print(f'Ano foi digitado de forma incorreta!')
+            
     def exibir_dados():
         os.system('cls')
         if Veiculo.veiculos['Caminhão']:
             for modelo, dados in Veiculo.veiculos['Caminhão'].items():
-                print(f'Modelo: {modelo}\nMarca: {dados["Marca"]}\n'
+                print(f'{modelo}:\nMarca: {dados["Marca"]}\n'
                     f'Cor: {dados["Cor"]}\nAno: {dados["Ano"]}\n'
                     f'Carga máxima: {dados["Carga máxima"]}')
                 print('-'*70)
@@ -229,7 +241,7 @@ class Caminhao(Veiculo):
         Caminhao.exibir_dados()
         dicio_caminhao = Veiculo.veiculos['Caminhão']
         if dicio_caminhao:
-            trocar = input('Escolha qual caminhão deseja '
+            trocar = input('Escolha qual modelo de caminhão deseja '
                            'escolher: ').capitalize()
             if trocar in dicio_caminhao:
                 opcao = input('Qual dado deseja alterar: ').capitalize()
