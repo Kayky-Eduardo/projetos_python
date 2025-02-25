@@ -1,0 +1,29 @@
+A. Cite quatro sistemas que você tenha usado/visualizado recentemente e
+que provavelmente tenha um SGBD para realizar a persistência dos dados
+
+
+
+B. Detalhe quais são as principais funções de um administrador de um banco de dados​
+
+    Define a estrutura do banco, estabelece medidas de segurança.
+
+C. Descreva pelos menos 3 tabelas que você acredita que precisam ser usadas para
+armazenar informações em um sistema de redes sociais como o Facebook.​
+
+    perfil para identificar a informações da pessoa, 
+
+
+
+D. Liste os primeiros passos que você seguiria para a
+criação de um banco de dados para uma empresa e justifique.​
+
+
+E. Defina as principais categorias de modelos de dados.​
+    Relacional: organiza as informações de maneira intuitiva em tabelas
+    Redes​: é composto por uma coleção de registros interconectados por ligações
+    Hierárquico:​ parecido com Redes​ no sentido de estarem interconectados por meio de registros e ligações.
+    A diferença é que o banco é organizado em formato de árvore.
+    Orientado a objetos:​ 
+
+F. Dê uma vantagem e uma desvantagem de se usar um SGBD em um sistema, justifique sua resposta.
+
