@@ -1,21 +1,30 @@
 A. Cite quatro sistemas que você tenha usado/visualizado recentemente e
 que provavelmente tenha um SGBD para realizar a persistência dos dados
 
-
+    WhatsApp com registros de conversas, contatos e configurações dos usuários.
+    picpay controla conta e cartão dos clientes
+    mercado livre porque mexe com transações financeiras igual o picpay + conta do cliente
+    spotify armazena dados sobre musicas e playlists
 
 B. Detalhe quais são as principais funções de um administrador de um banco de dados​
 
-    Define a estrutura do banco, estabelece medidas de segurança.
+    Define a estrutura do banco, estabelece medidas de segurança, otimiza o sistema,
+    faz backups dos dados para não perder informações, 
 
 C. Descreva pelos menos 3 tabelas que você acredita que precisam ser usadas para
 armazenar informações em um sistema de redes sociais como o Facebook.​
 
     perfil para identificar a informações da pessoa, 
-
+    postagens para guardar as publicações do usuario,
+    amizades para checar a conexão entre usuarios
 
 
 D. Liste os primeiros passos que você seguiria para a
 criação de um banco de dados para uma empresa e justifique.​
+
+    checar de que forma o cliente quer que os dados se conectem,
+    definir a tabela e suas relações de acordo com o que o cliente passou,
+    proteger os dados e checar o desempenho para ver se é necessario otimização
 
 
 E. Defina as principais categorias de modelos de dados.​
@@ -23,7 +32,10 @@ E. Defina as principais categorias de modelos de dados.​
     Redes​: é composto por uma coleção de registros interconectados por ligações
     Hierárquico:​ parecido com Redes​ no sentido de estarem interconectados por meio de registros e ligações.
     A diferença é que o banco é organizado em formato de árvore.
-    Orientado a objetos:​ 
+    Orientado a objetos:​ Combina conceitos de banco de dados e programação orientada a objetos,
+     armazenando dados como objetos com métodos e atributos.
 
 F. Dê uma vantagem e uma desvantagem de se usar um SGBD em um sistema, justifique sua resposta.
 
+    Vantagem: segurança
+    desvantagem: para servidores mais parrudos é necessario uma sql paga
