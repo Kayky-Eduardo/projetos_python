@@ -1,41 +1,53 @@
-A. Cite quatro sistemas que você tenha usado/visualizado recentemente e
-que provavelmente tenha um SGBD para realizar a persistência dos dados
+A. Cite quatro sistemas que você tenha utilizado ou analisado recentemente,
+nos quais a persistência de dados é gerenciada por um Sistema de Gerenciamento de Banco de Dados (SGBD).
+Para cada exemplo, explique de que forma o SGBD contribui para a eficiência e integridade dos dados no funcionamento do sistema.
 
     WhatsApp com registros de conversas, contatos e configurações dos usuários.
     picpay controla conta e cartão dos clientes
     mercado livre porque mexe com transações financeiras igual o picpay + conta do cliente
     spotify armazena dados sobre musicas e playlists
 
-B. Detalhe quais são as principais funções de um administrador de um banco de dados​
+B. Descreva as principais funções de um administrador de banco de dados(DBA) em um contexto corporativo,
+detalhando a importância desse profissional não apenas para a manutenção do banco de dados,
+mas também para o sucesso do desenvolvimento e operação de sistemas em uma organização.
 
-    Define a estrutura do banco, estabelece medidas de segurança, otimiza o sistema,
-    faz backups dos dados para não perder informações, 
+    Definir a estrutura do banco, estabelecer medidas de segurança, otimizar o sistema,
+    armazenar os dados. Este profissional é essencial para assegurar a qualidade das informações
+    e garantir o bom funcionamento do BD.
 
-C. Descreva pelos menos 3 tabelas que você acredita que precisam ser usadas para
-armazenar informações em um sistema de redes sociais como o Facebook.​
+C. Em um sistema de redes sociais como o Facebook, quais tabelas você considera essenciais para armazenar informações importantes,
+e como elas se inter-relacionam para garantir a funcionalidade do sistema?
+Detalhe pelo menos três tabelas e discuta a relevância de cada uma para o desempenho da plataforma.
 
-    perfil para identificar a informações da pessoa, 
-    postagens para guardar as publicações do usuario,
+    perfil para identificar a informações da pessoa(usuario), 
+    postagens para guardar as publicações do usuario(pessoa),
     amizades para checar a conexão entre usuarios
 
+D. Quais são os primeiros passos que você adotaria para planejar a criação de um banco de dados para uma empresa de grande porte,
+levando em consideração as necessidades específicas do negócio? Justifique cada decisão com base nos requisitos organizacionais e técnicos
 
-D. Liste os primeiros passos que você seguiria para a
-criação de um banco de dados para uma empresa e justifique.​
+    checar as necessidades da empresa para fazer relações de acordo,
+    definir a tabela e suas relações de acordo com a informação adquirida anteriormente,
+    proteger os dados para impedir de vazar dados e fazer backups
+    e checar o desempenho para ver se é necessario otimização
 
-    checar de que forma o cliente quer que os dados se conectem,
-    definir a tabela e suas relações de acordo com o que o cliente passou,
-    proteger os dados e checar o desempenho para ver se é necessario otimização
+E. Defina as principais categorias de modelos de dados, destacando suas características e
+explicando qual delas seria mais adequada para diferentes tipos de sistemas de informação.
+  
+    Relacional: organiza as informações de maneira intuitiva em tabelas(mais adequada em um ambiente corporativo)
 
-
-E. Defina as principais categorias de modelos de dados.​
-    Relacional: organiza as informações de maneira intuitiva em tabelas
-    Redes​: é composto por uma coleção de registros interconectados por ligações
+    Redes​: é composto por uma coleção de registros interconectados por ligações(Mais adequada a um nivel internacional)
+  
     Hierárquico:​ parecido com Redes​ no sentido de estarem interconectados por meio de registros e ligações.
-    A diferença é que o banco é organizado em formato de árvore.
+    A diferença é que o banco é organizado em formato de árvore, ou seja, possui um pai e vários registros filhos.
+    (bom para descrever relações do mundo real)
+  
     Orientado a objetos:​ Combina conceitos de banco de dados e programação orientada a objetos,
-     armazenando dados como objetos com métodos e atributos.
+    armazenando dados como objetos com métodos e atributos.
 
-F. Dê uma vantagem e uma desvantagem de se usar um SGBD em um sistema, justifique sua resposta.
+F. Apresente uma vantagem e uma desvantagem no uso de um Sistema de Gerenciamento de Banco de Dados(SGBD) em um sistema,
+ levando em conta fatores como escalabilidade, performance e complexidade. Justifique sua resposta.
 
-    Vantagem: segurança
-    desvantagem: para servidores mais parrudos é necessario uma sql paga
+    Vantagem: Segurança de dados definindo regras que limitam o acesso à base de dados // Acesso rápido a dados precisos /
+    / Permite a manipulação dos dados e o acesso às informações com rapidez. 
+    desvantagem: Custo(para servidores mais parrudos é necessario uma sql paga) // desempenho precário devido a configurações ruins
