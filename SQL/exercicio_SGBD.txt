@@ -3,8 +3,12 @@ nos quais a persistência de dados é gerenciada por um Sistema de Gerenciamento
 Para cada exemplo, explique de que forma o SGBD contribui para a eficiência e integridade dos dados no funcionamento do sistema.
 
     WhatsApp com registros de conversas, contatos e configurações dos usuários. garantindo a consistência dos dados e permitindo recuperação rápida de mensagens.
-    picpay controla conta e cartão dos clientes, garantindo a integridade e segurança das transações financeiras.
-    mercado gerencia compras, vendas, pagamentos e contas de usuários, garantindo confiabilidade e rastreamento das operações.
+    
+    picpay controla conta e cartão dos clientes, garantindo a integridade e segurança das transações financeiras
+    realizando a validação de dados e a proteção contra fraudes, além de possibilitar consultas rápidas e confiáveis. 
+    
+    mercado livre gerencia compras, vendas, pagamentos e contas de usuários, garantindo confiabilidade e rastreamento das operações.
+    
     spotify armazena dados sobre musicas e playlists
 
 B. Descreva as principais funções de um administrador de banco de dados(DBA) em um contexto corporativo,
@@ -13,7 +17,8 @@ mas também para o sucesso do desenvolvimento e operação de sistemas em uma or
 
     Definir a estrutura do banco, estabelecer medidas de segurança, otimizar o sistema e 
     implementa rotinas de backups para disponibilidade de dados em caso de falha.
-    Este profissional é essencial para assegurar a qualidade das informações
+    Este profissional é essencial para assegurar a segurança e qualidade das informações, 
+    ajudando até mesmo na solução de problemas 
 
 C. Em um sistema de redes sociais como o Facebook, quais tabelas você considera essenciais para armazenar informações importantes,
 e como elas se inter-relacionam para garantir a funcionalidade do sistema?
@@ -25,19 +30,19 @@ Detalhe pelo menos três tabelas e discuta a relevância de cada uma para o dese
 D. Quais são os primeiros passos que você adotaria para planejar a criação de um banco de dados para uma empresa de grande porte,
 levando em consideração as necessidades específicas do negócio? Justifique cada decisão com base nos requisitos organizacionais e técnicos
 
-    cIdentificar quais dados precisam ser armazenados e como serão usados,
+    Identificar como os dados precisam ser armazenados e como serão usados,
     criar a tabela e suas relações, estabelecer permissões e controles para proteger os dados.
     fazer backups e checar o desempenho para ver se é necessario otimização
 
 E. Defina as principais categorias de modelos de dados, destacando suas características e
 explicando qual delas seria mais adequada para diferentes tipos de sistemas de informação.
-  
+
     Relacional: Organiza dados em tabelas e usa chaves para relacionamentos(mais adequada em um ambiente corporativo)
 
     Redes​: é composto por uma coleção de registros interconectados por ligações.
-  
+
     Hierárquico:​ Organização em árvore com relações pai-filho. Usado em sistemas onde os dados têm hierarquia fixa.
-  
+
     Orientado a objetos:​ Combina conceitos de banco de dados e programação orientada a objetos,
     armazenando dados como objetos com métodos e atributos.
 
@@ -46,4 +51,5 @@ F. Apresente uma vantagem e uma desvantagem no uso de um Sistema de Gerenciament
 
     Vantagem: Segurança de dados, pois o SGBD permite controle de acessos // Permite a manipulação dos dados e o acesso às informações com rapidez. 
 
-    desvantagem: Custo(para servidores mais robustos com uma necessidade maior de segurança ou apoio é necessario uma sql paga)
+    desvantagem: Custo(para servidores mais robustos com uma necessidade maior de segurança ou apoio é necessario uma sql paga) //
+    complexidade requerindo um pessoal qualificado para trabalhar com
