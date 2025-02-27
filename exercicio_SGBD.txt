@@ -44,7 +44,6 @@ explicando qual delas seria mais adequada para diferentes tipos de sistemas de i
 F. Apresente uma vantagem e uma desvantagem no uso de um Sistema de Gerenciamento de Banco de Dados(SGBD) em um sistema,
  levando em conta fatores como escalabilidade, performance e complexidade. Justifique sua resposta.
 
-    Vantagem: Segurança de dados, pois o SGBD permite controle de acessos // Acesso rápido a dados precisos 
-    // Permite a manipulação dos dados e o acesso às informações com rapidez. 
+    Vantagem: Segurança de dados, pois o SGBD permite controle de acessos // Permite a manipulação dos dados e o acesso às informações com rapidez. 
 
     desvantagem: Custo(para servidores mais robustos com uma necessidade maior de segurança ou apoio é necessario uma sql paga)
